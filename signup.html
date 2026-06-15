@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — Pelican Lake Cup</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Pelican Lake <span>Cup</span></a>
+      <div class="nav-toggle">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="format.html">Format</a>
+        <a href="course.html">Course</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Sign Up</h1>
+    <p>Claim your spot. Spots are limited to 20 players.</p>
+  </section>
+
+  <!-- Sign Up Form -->
+  <section class="section">
+    <div class="form-container">
+      <h2 class="section-title" style="text-align: center; margin-bottom: 0.25rem;">Player Registration</h2>
+      <p class="section-subtitle" style="text-align: center;">Fill out the form below to register for the inaugural Pelican Lake Cup.</p>
+
+      <form action="https://formsubmit.co/peterlundquist33@gmail.com" method="POST">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New Pelican Lake Cup Registration!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-group">
+          <label for="player-name">Full Name *</label>
+          <input type="text" id="player-name" name="Name" placeholder="e.g. Tiger Woods" required>
+        </div>
+
+        <div class="form-group">
+          <label for="player-email">Email *</label>
+          <input type="email" id="player-email" name="Email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="player-handicap">Handicap Index</label>
+          <input type="text" id="player-handicap" name="Handicap" placeholder="e.g. 12.4 (leave blank if unknown)">
+        </div>
+
+        <button type="submit" class="form-submit">Register</button>
+        <p class="form-note">You'll receive confirmation details via email.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><strong>Pelican Lake Cup</strong> &copy; 2027 &mdash; Let the best team win.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
