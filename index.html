@@ -1,98 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pelican Lake Cup</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pelican Lake Cup</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+:root{--teal:#00a9c4;--teal-dark:#007a91;--teal-light:#e4f6fa;--gold:#ffc72c;--cream:#f7f8f9;--white:#fff;--text:#1a1a1a;--text-light:#5a5a5a;--text-muted:#8a8a8a;--border:#dbe3e6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:var(--text);-webkit-font-smoothing:antialiased}
+.ticker{background:var(--teal-dark);color:#fff;display:flex;align-items:stretch;font-size:.8rem;overflow:hidden;white-space:nowrap}
+.ticker-label{background:var(--teal);padding:10px 14px;font-weight:700;letter-spacing:1px;font-size:.65rem;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;z-index:2}
+.ticker-track-wrap{overflow:hidden;flex:1;display:flex;align-items:center}
+.ticker-track{display:inline-flex;align-items:center;animation:scroll 55s linear infinite}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{padding:10px 18px;border-right:1px solid rgba(255,255,255,.08);flex-shrink:0}
+.ticker-item .day-tag{color:var(--gold);font-weight:700}
+header{background:var(--white);border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:0;z-index:50}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.cup-icon{font-size:3.2rem;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.18))}
+.header-logo h1{font-family:'Playfair Display',serif;font-size:3.4rem;color:var(--teal-dark);font-style:italic;font-weight:700;letter-spacing:2px;text-align:center;line-height:1.04;margin:2px 0;text-shadow:0 2px 10px rgba(0,122,145,.18)}
+@media(max-width:560px){.cup-icon{font-size:2.4rem}.header-logo h1{font-size:2.1rem;letter-spacing:1px}}
+.header-nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.header-nav a{color:var(--text);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s}
+.header-nav a:hover{color:var(--teal)}
+.hero{background:var(--teal);color:#fff;text-align:center;padding:48px 24px;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+.hero .date-label{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+.hero h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;letter-spacing:1px;margin-bottom:8px}
+.hero .location{font-size:.95rem;opacity:.85}
+.hero-logo{max-width:300px;width:70%;margin:0 auto 22px;border-radius:12px;filter:drop-shadow(0 8px 32px rgba(0,0,0,.3))}
+.countdown{display:flex;justify-content:center;align-items:flex-start;gap:10px;margin-top:22px}
+.cd-unit{display:flex;flex-direction:column;align-items:center;min-width:58px}
+.cd-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;line-height:1;color:var(--gold)}
+.cd-lab{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;opacity:.7;margin-top:5px}
+.cd-sep{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);opacity:.5;line-height:1.1}
+.cd-tagline{font-size:.78rem;letter-spacing:1px;opacity:.75;margin-top:12px;text-transform:uppercase}
+@media(max-width:440px){.cd-num{font-size:1.8rem}.cd-unit{min-width:44px}.cd-sep{font-size:1.5rem}}
+.hero-cta{display:inline-block;margin-top:22px;background:var(--gold);color:var(--teal-dark);padding:12px 30px;border-radius:6px;font-weight:700;text-decoration:none;letter-spacing:.5px;font-size:.9rem;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.container{max-width:1000px;margin:0 auto;padding:0 16px}
+section{padding:44px 0;border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+.page-label{font-size:.7rem;text-transform:uppercase;letter-spacing:3px;color:var(--text-muted);margin-bottom:4px;text-align:center}
+.page-title{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--teal-dark);margin-bottom:6px;font-weight:400;text-align:center}
+.section-sub{text-align:center;color:var(--text-light);max-width:640px;margin:0 auto 28px;font-size:.95rem;line-height:1.55}
+.gold-line{width:60px;height:3px;background:var(--gold);margin:0 auto 26px;border-radius:2px}
+
+/* Matchup / VS hero */
+.vs-wrap{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:1rem 0 2rem}
+.vs-side{text-align:center;flex:1;min-width:230px}
+.vs-side img{max-width:240px;width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);margin-bottom:1rem}
+.vs-side h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--teal-dark)}
+.vs-side p{color:var(--text-muted);font-size:.9rem;margin-top:2px}
+.vs-mid{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--gold);flex-shrink:0}
+
+/* Cards */
+.card-grid{display:grid;gap:16px;margin-top:8px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:22px 22px;box-shadow:0 4px 16px rgba(0,122,145,.06)}
+.card .round-badge{width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;margin-bottom:10px}
+.card h3{font-family:'Playfair Display',serif;color:var(--teal-dark);font-weight:700;font-size:1.15rem;margin-bottom:6px}
+.card p{color:var(--text-light);font-size:.9rem;line-height:1.55}
+.card .hcp-note{margin-top:.6rem;font-size:.85rem;color:var(--text)}
+.card .hcp-note strong{color:var(--teal-dark)}
+
+/* Info blocks */
+.info-block{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:6px;padding:18px 20px;margin-bottom:14px}
+.info-block h3{font-family:'Playfair Display',serif;color:var(--teal-dark);font-size:1.1rem;margin-bottom:6px}
+.info-block p,.info-block li{color:var(--text-light);font-size:.9rem;line-height:1.6}
+.info-block ul{margin-left:1.1rem}
+.info-block a{color:var(--teal);font-weight:600;text-decoration:none}
+
+/* History */
+.hist-hero{background:linear-gradient(160deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;border-radius:12px;padding:26px 24px;margin-bottom:26px;box-shadow:0 10px 30px rgba(0,122,145,.25)}
+.hist-hero-top{display:flex;justify-content:space-between;font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;opacity:.85;margin-bottom:14px}
+.hist-scoreboard{display:flex;align-items:center;justify-content:center;gap:1.4rem;margin-bottom:16px}
+.hist-team{text-align:center;flex:1}
+.hist-team-label{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;opacity:.9}
+.hist-team-score{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:700;color:var(--gold);line-height:1}
+.hist-team-note{font-size:.75rem;opacity:.8;margin-top:2px}
+.hist-vs{font-family:'Playfair Display',serif;font-size:1.4rem;opacity:.7}
+.hist-hero-copy{font-size:.9rem;line-height:1.6;opacity:.95;text-align:center;max-width:640px;margin:0 auto}
+.hist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:26px}
+.hist-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(0,122,145,.06)}
+.hist-card.muted{opacity:.72}
+.hist-card.next{border:2px dashed var(--gold);background:var(--teal-light)}
+.hist-card-head{display:flex;justify-content:space-between;align-items:baseline;font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px}
+.hist-card-head strong{color:var(--teal)}
+.hist-card h3{font-family:'Playfair Display',serif;color:var(--teal-dark);font-size:1.15rem;margin-bottom:4px}
+.hist-meta{font-size:.78rem;color:var(--text-muted);margin-bottom:8px;font-style:italic}
+.hist-card p{font-size:.88rem;color:var(--text-light);line-height:1.55;margin-bottom:8px}
+.hist-card ul{margin-left:1.1rem;font-size:.85rem;color:var(--text-light);line-height:1.5}
+.hist-card ul strong{color:var(--text)}
+
+/* Tables */
+.data-table{width:100%;background:var(--white);border:1px solid var(--border);border-collapse:collapse;border-radius:8px;overflow:hidden;font-size:.9rem;margin-top:8px}
+.data-table th{background:rgba(0,169,196,.08);padding:10px 12px;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--teal-dark);border-bottom:1px solid var(--border)}
+.data-table td{padding:11px 12px;border-bottom:1px solid var(--border);color:var(--text)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:rgba(0,0,0,.015)}
+.tee-dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:middle;border:1px solid rgba(0,0,0,.15)}
+.tee-black{background:#222}.tee-blue{background:#2b6fd6}.tee-combo{background:#7a5cd0}.tee-white{background:#f2f2f2}
+
+/* Split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.split{grid-template-columns:1fr}.hist-scoreboard{gap:.8rem}.hist-team-score{font-size:2.6rem}}
+
+/* Form */
+.form-container{max-width:520px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px 26px;box-shadow:0 6px 24px rgba(0,122,145,.08)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--teal-dark);margin-bottom:5px}
+.form-group input{width:100%;padding:11px 13px;border:1px solid var(--border);border-radius:6px;font-size:.92rem;font-family:inherit;background:var(--cream)}
+.form-group input:focus{outline:none;border-color:var(--teal);background:#fff}
+.form-submit{width:100%;background:var(--teal);color:#fff;border:none;padding:13px;border-radius:6px;font-size:.95rem;font-weight:700;letter-spacing:.5px;cursor:pointer;transition:background .2s}
+.form-submit:hover{background:var(--teal-dark)}
+.form-note{text-align:center;font-size:.78rem;color:var(--text-muted);margin-top:12px}
+
+.footer{background:var(--teal-dark);color:#fff;text-align:center;padding:26px 16px;font-size:.85rem}
+.footer strong{color:var(--gold)}
+</style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Pelican Lake <span>Cup</span></a>
-      <div class="nav-toggle">
-        <span></span><span></span><span></span>
+<!-- Ticker -->
+<div class="ticker">
+  <div class="ticker-label">The Cup</div>
+  <div class="ticker-track-wrap"><div class="ticker-track">
+    <div class="ticker-item"><span class="day-tag">SEPTEMBER 2027 · PELICAN LAKE</span></div>
+    <div class="ticker-item">Top Guns 4 &mdash; Cinderella Boyz 0</div>
+    <div class="ticker-item">Five rounds · Five formats</div>
+    <div class="ticker-item">Two teams of 10</div>
+    <div class="ticker-item">The dynasty vs the challengers</div>
+    <div class="ticker-item"><span class="day-tag">SEPTEMBER 2027 · PELICAN LAKE</span></div>
+    <div class="ticker-item">Top Guns 4 &mdash; Cinderella Boyz 0</div>
+    <div class="ticker-item">Five rounds · Five formats</div>
+    <div class="ticker-item">Two teams of 10</div>
+    <div class="ticker-item">The dynasty vs the challengers</div>
+  </div></div>
+</div>
+
+<!-- Sticky header -->
+<header>
+  <div class="header-inner">
+    <div class="header-logo"><div class="cup-icon" style="text-align:center">🏆</div><h1>Pelican Lake Cup</h1></div>
+    <nav class="header-nav">
+      <a href="#teams">Teams</a>
+      <a href="#format">Format</a>
+      <a href="#history">History</a>
+      <a href="#course">Course</a>
+      <a href="#signup">Sign Up</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <img class="hero-logo" src="logo.jpg" alt="Pelican Lake Cup">
+  <div class="date-label">Ryder Cup–Style Showdown</div>
+  <h2>September 2027</h2>
+  <div class="location">Pelican Lake · Breezy Point, Minnesota</div>
+  <div class="countdown" id="countdown">
+    <div class="cd-unit"><span class="cd-num" id="cd-d">—</span><span class="cd-lab">Days</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-h">—</span><span class="cd-lab">Hrs</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-m">—</span><span class="cd-lab">Min</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-s">—</span><span class="cd-lab">Sec</span></div>
+  </div>
+  <div class="cd-tagline" id="cd-tagline">until the Cup returns 🏌️</div>
+  <a href="#signup" class="hero-cta">Register Your Spot</a>
+</div>
+
+<div class="container">
+
+<!-- TEAMS -->
+<section id="teams">
+  <div class="page-label">The Showdown</div>
+  <div class="page-title">The Teams</div>
+  <div class="gold-line"></div>
+  <p class="section-sub">Two captains. Two teams of 10. Five rounds of competitive golf across multiple formats. Bragging rights on the line.</p>
+
+  <div class="vs-wrap">
+    <div class="vs-side">
+      <img src="topguns-logo.jpg" alt="The Top Guns">
+      <h3>The Top Guns</h3>
+      <p>Captain: <strong>John Lundquist</strong></p>
+    </div>
+    <div class="vs-mid">VS</div>
+    <div class="vs-side">
+      <img src="cinderella-logo.jpg" alt="Cinderella Boyz">
+      <h3>Cinderella Boyz</h3>
+      <p>Captain: <strong>Peter Lundquist</strong></p>
+    </div>
+  </div>
+
+  <div class="card-grid" style="grid-template-columns:1fr;">
+    <div class="card" style="text-align:center;">
+      <div class="round-badge" style="margin:0 auto 10px;">⛳</div>
+      <h3>5 Rounds · 1 Trophy</h3>
+      <p>Scramble. Shamble. Alternate Shot. Singles Match Play. Every format tests a different part of your game. Rosters are drafted; teams and pairings are set closer to the event.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMAT -->
+<section id="format">
+  <div class="page-label">Competition</div>
+  <div class="page-title">Format</div>
+  <div class="gold-line"></div>
+  <p class="section-sub">Five rounds. Five formats. No hiding. Points are awarded match-play style and aggregate across all five rounds. The team with the most total points wins the Pelican Lake Cup.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="round-badge">1</div>
+      <h3>2v2 Scramble</h3>
+      <p>Both players hit, pick the best ball, repeat. The ultimate team format — lean on your partner's strengths.</p>
+      <p class="hcp-note"><strong>Handicap:</strong> 35% of low handicap + 15% of high handicap.</p>
+    </div>
+    <div class="card">
+      <div class="round-badge">2</div>
+      <h3>2v2 Shamble — Combined Net</h3>
+      <p>Both players hit the tee shot, pick the best drive, then each plays their own ball in. Combined net score counts.</p>
+      <p class="hcp-note"><strong>Handicap:</strong> 60% of course handicap for each player.</p>
+    </div>
+    <div class="card">
+      <div class="round-badge">3</div>
+      <h3>2v2 Shamble — Best Net</h3>
+      <p>Same as Round 2 — pick the best drive, play your own ball — but only the <strong>best net score</strong> of the two partners counts each hole.</p>
+      <p class="hcp-note"><strong>Handicap:</strong> 85% of course handicap for each player.</p>
+    </div>
+    <div class="card">
+      <div class="round-badge">4</div>
+      <h3>Alternate Shot Scramble</h3>
+      <p>Partners alternate shots on each hole. Pick the best tee shot first, then trade off from there. Communication is everything.</p>
+      <p class="hcp-note"><strong>Handicap:</strong> 35% of combined team handicap.</p>
+    </div>
+    <div class="card">
+      <div class="round-badge">5</div>
+      <h3>Singles Match Play</h3>
+      <p>Head to head. Hole by hole. No partner to bail you out. This is where legends are made.</p>
+      <p class="hcp-note"><strong>Handicap:</strong> Full course handicap (strokes given based on difference).</p>
+    </div>
+  </div>
+
+  <div style="margin-top:22px;">
+    <div class="info-block">
+      <h3>Scoring</h3>
+      <p>Each round is scored match-play style. Results from all five rounds aggregate on the cumulative scoreboard. Most total points at the end wins the Cup.</p>
+    </div>
+    <div class="info-block">
+      <h3>Tiebreaker</h3>
+      <p>In the event of a tie after five rounds, the result of Round 5 (Singles Match Play) serves as the tiebreaker. If still tied — sudden death playoff, captain's pick.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history">
+  <div class="page-label">The Cup History</div>
+  <div class="page-title">The Story So Far</div>
+  <div class="gold-line"></div>
+
+  <div class="hist-hero">
+    <div class="hist-hero-top"><span>All-Time Cup Record</span><span>2020–2024</span></div>
+    <div class="hist-scoreboard">
+      <div class="hist-team">
+        <div class="hist-team-label">Top Guns</div>
+        <div class="hist-team-score">4</div>
+        <div class="hist-team-note">Four-time champions</div>
       </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="history.html">History</a>
-        <a href="format.html">Format</a>
-        <a href="course.html">Course</a>
-        <a href="signup.html">Sign Up</a>
+      <div class="hist-vs">VS</div>
+      <div class="hist-team">
+        <div class="hist-team-label">Cinderella Boyz</div>
+        <div class="hist-team-score">0</div>
+        <div class="hist-team-note">Still chasing the breakthrough</div>
       </div>
     </div>
-  </nav>
+    <p class="hist-hero-copy">The Pelican Lake Cup started in 2020 while the Lundquist cabin was still being built. Ten guys, three rounds at Deacons Lodge, a camper in the yard, and a half-finished cabin turned into a family golf tradition with captains, drafts, uniforms, side games, and plenty of score-settling.</p>
+  </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="logo.jpg" alt="Pelican Lake Cup" style="max-width: 360px; width: 80%; margin: 0 auto 2rem; border-radius: 12px; filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));">
-      <div class="hero-badge">September 2027</div>
-      <h1>The <span class="accent">Pelican Lake</span> Cup</h1>
-      <p class="hero-subtitle">A Ryder Cup-style showdown between family and friends. Two teams. Five rounds. One trophy.</p>
+  <div class="hist-grid">
+    <article class="hist-card">
+      <div class="hist-card-head"><span>2020</span><strong>Top Guns</strong></div>
+      <h3>The Inaugural Cup</h3>
+      <p class="hist-meta">September 10–13, 2020 · Deacons Lodge · Cabin under construction</p>
+      <p>Erik had wanted to organize a Ryder Cup-style event for years. The first version came together during the summer the new Pelican Lake cabin was being built, with players spread between the old yellow cabin, Mark Troutman's camper, and a neighbor's guest house.</p>
+      <ul>
+        <li><strong>Captains:</strong> Erik Lundquist and Tim Valen</li>
+        <li><strong>Field:</strong> 10 players</li>
+        <li><strong>Format:</strong> 15 total points, 8 to win</li>
+        <li><strong>Rounds:</strong> Two-man shamble, singles, modified alternate shot + scramble</li>
+      </ul>
+    </article>
 
-      <!-- Countdown -->
-      <div class="countdown">
-        <div class="countdown-item">
-          <span class="countdown-number" id="days">--</span>
-          <div class="countdown-label">Days</div>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="hours">--</span>
-          <div class="countdown-label">Hours</div>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="minutes">--</span>
-          <div class="countdown-label">Minutes</div>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="seconds">--</span>
-          <div class="countdown-label">Seconds</div>
-        </div>
-      </div>
+    <article class="hist-card">
+      <div class="hist-card-head"><span>2021</span><strong>Top Guns</strong></div>
+      <h3>Back at the Lake</h3>
+      <p class="hist-meta">September 9–12, 2021 · Whitefish, White Birch, Crosswoods</p>
+      <p>The new cabin was finished and the Cup had a proper home base. The field expanded, Peter joined the event, and the Cinderella Boyz cooking the opening night dinner became part of the tradition.</p>
+      <ul>
+        <li><strong>Captains:</strong> Erik Lundquist and Tim Valen</li>
+        <li><strong>Field:</strong> 12 players</li>
+        <li><strong>Saturday dinner:</strong> Norway Ridge Supper Club</li>
+        <li><strong>Result:</strong> Two years, two Top Guns victories</li>
+      </ul>
+    </article>
 
-      <a href="signup.html" class="hero-cta">Register Your Spot</a>
+    <article class="hist-card muted">
+      <div class="hist-card-head"><span>2022</span><strong>No Event</strong></div>
+      <h3>The Gap Year</h3>
+      <p class="hist-meta">The trophy stayed on John's shelf.</p>
+      <p>No Cup was held in 2022, leaving the Top Guns unbeaten and the Cinderella Boyz waiting another year for a shot at the trophy.</p>
+    </article>
+
+    <article class="hist-card">
+      <div class="hist-card-head"><span>2023</span><strong>Top Guns</strong></div>
+      <h3>The Brothers Take Over</h3>
+      <p class="hist-meta">September 13–17, 2023 · Deacons Lodge, Golden Eagle, Whitefish</p>
+      <p>John and Peter became captains, the field grew to 16, and the draft became an event of its own: Breezy Point Airport, Wednesday night cookout, lawn chairs, and self-scouting reports from every player.</p>
+      <ul>
+        <li><strong>Top Guns captain:</strong> John Lundquist</li>
+        <li><strong>Cinderella Boyz captain:</strong> Peter Lundquist</li>
+        <li><strong>Format:</strong> 20 total points, 10.5 to win</li>
+        <li><strong>Result:</strong> Three years, three Top Guns wins</li>
+      </ul>
+    </article>
+
+    <article class="hist-card">
+      <div class="hist-card-head"><span>2024</span><strong>Top Guns</strong></div>
+      <h3>Deacons Lodge Takeover</h3>
+      <p class="hist-meta">September 11–15, 2024 · Deacons Lodge all three rounds</p>
+      <p>The Cup stayed at Deacons for the full weekend. Teams were drafted in advance for shirt sizing, side games were added each day, and the Top Guns kept the trophy again.</p>
+      <ul>
+        <li><strong>Top Guns:</strong> John, Ray, Logan, Drew, Pete, Hunter, Jim, Scott</li>
+        <li><strong>Cinderella Boyz:</strong> Peter, Jared, Dan, Nick, CJ, Christian, Tim, Erik</li>
+        <li><strong>New players:</strong> Dan Christianson and Christian Massett</li>
+        <li><strong>Result:</strong> Four straight for the Top Guns</li>
+      </ul>
+    </article>
+
+    <article class="hist-card next">
+      <div class="hist-card-head"><span>2027</span><strong>Next Chapter</strong></div>
+      <h3>The Return</h3>
+      <p class="hist-meta">September 2027 · Pelican Lake area</p>
+      <p>The next Cup brings the same rivalry into a new chapter. The Top Guns have the dynasty. The Cinderella Boyz have the motivation. Every dynasty eventually falls — but not until somebody takes it.</p>
+    </article>
+  </div>
+
+  <table class="data-table">
+    <thead><tr><th>Year</th><th>Winner</th><th>Captains</th><th>Field</th><th>Courses</th></tr></thead>
+    <tbody>
+      <tr><td>2020</td><td>Top Guns</td><td>Erik Lundquist / Tim Valen</td><td>10</td><td>Deacons Lodge</td></tr>
+      <tr><td>2021</td><td>Top Guns</td><td>Erik Lundquist / Tim Valen</td><td>12</td><td>Whitefish, White Birch, Crosswoods</td></tr>
+      <tr><td>2022</td><td>No event</td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><td>2023</td><td>Top Guns</td><td>John Lundquist / Peter Lundquist</td><td>16</td><td>Deacons, Golden Eagle, Whitefish</td></tr>
+      <tr><td>2024</td><td>Top Guns</td><td>John Lundquist / Peter Lundquist</td><td>16</td><td>Deacons Lodge</td></tr>
+    </tbody>
+  </table>
+
+  <div class="split" style="margin-top:22px;">
+    <div class="info-block">
+      <h3>Cup Traditions</h3>
+      <ul>
+        <li>The draft: live at Breezy Point Airport in 2023, then pre-drafted in 2024 for shirts.</li>
+        <li>Cinderella Boyz cook the opening night dinner.</li>
+        <li>The cabin at 10955 Hamilton Lane is Cup headquarters.</li>
+        <li>The format keeps rotating: shamble, singles, alternate shot, scramble.</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- Quick Info -->
-  <section class="section">
-    <h2 class="section-title">The Showdown</h2>
-    <div class="gold-line"></div>
-    <p class="section-subtitle">Two captains. Two teams of 10. Five rounds of competitive golf across multiple formats. Bragging rights on the line.</p>
-
-    <!-- Team Matchup -->
-    <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 3rem 0;">
-      <div style="text-align: center; flex: 1; min-width: 250px;">
-        <img src="topguns-logo.jpg" alt="The Top Guns" style="max-width: 280px; width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); margin-bottom: 1rem;">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--green-dark);">The Top Guns</h3>
-        <p style="color: var(--text-muted);">Captain: <strong>John Lundquist</strong></p>
-      </div>
-      <div style="text-align: center; flex-shrink: 0;">
-        <span style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--gold);">VS</span>
-      </div>
-      <div style="text-align: center; flex: 1; min-width: 250px;">
-        <img src="cinderella-logo.jpg" alt="Cinderella Boys" style="max-width: 280px; width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); margin-bottom: 1rem;">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--green-dark);">Cinderella Boys</h3>
-        <p style="color: var(--text-muted);">Captain: <strong>Peter Lundquist</strong></p>
-      </div>
+    <div class="info-block">
+      <h3>Players Through the Years</h3>
+      <p>The roster has included Erik, John, Peter, Tim Valen, Scott Moon, Mark Troutman, Ray Dunfee, Jim Urlick, Pete Overgaard, Nick Ozolins, Mark Goettig, Ken Ericson, Andrew Valen, Hunter Johnson, Drew Fredrickson, Jared Campbell, CJ Woda, Logan Rezac, Jim Ehrlich, Dan Christianson, and Christian Massett.</p>
     </div>
+  </div>
+</section>
 
-    <!-- Formats Card -->
-    <div class="card" style="text-align: center; margin-top: 2rem;">
-      <div class="card-icon">⛳</div>
-      <h3>5 Rounds</h3>
-      <p>Scramble. Shamble. Alternate Shot. Singles Match Play. Every format tests a different part of your game.</p>
+<!-- COURSE -->
+<section id="course">
+  <div class="page-label">Know the Battlefield</div>
+  <div class="page-title">Course Information</div>
+  <div class="gold-line"></div>
+  <p class="section-sub">Four tee boxes available. Tee assignments will be based on handicap and format requirements.</p>
+
+  <table class="data-table">
+    <thead><tr><th>Tees</th><th>Slope</th><th>Rating</th><th>Yardage</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tee-dot tee-black"></span> Black</td><td>144</td><td>74.1</td><td>6,964</td></tr>
+      <tr><td><span class="tee-dot tee-blue"></span> Blue</td><td>142</td><td>72.3</td><td>6,541</td></tr>
+      <tr><td><span class="tee-dot tee-combo"></span> Combo</td><td>133</td><td>71.6</td><td>6,418</td></tr>
+      <tr><td><span class="tee-dot tee-white"></span> White</td><td>130</td><td>70.0</td><td>6,067</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:22px;">
+    <div class="info-block">
+      <h3>📍 Location</h3>
+      <p>Pelican Lake area, Breezy Point, Minnesota. Full course name and address to be confirmed.</p>
     </div>
-  </section>
+    <div class="info-block">
+      <h3>🏌️ Handicap Calculation</h3>
+      <p>All handicap adjustments are calculated using the <strong>course slope and rating</strong> from the tees played. Each format uses a different percentage of course handicap — see the Format section above for specifics.</p>
+    </div>
+    <div class="info-block">
+      <h3>⚡ Course Conditions</h3>
+      <p>Details on cart rules, dress code, practice facilities, and pace-of-play expectations will be shared closer to the event.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p><strong>Pelican Lake Cup</strong> &copy; 2027 &mdash; Let the best team win.</p>
-  </footer>
+<!-- SIGN UP -->
+<section id="signup">
+  <div class="page-label">Claim Your Spot</div>
+  <div class="page-title">Sign Up</div>
+  <div class="gold-line"></div>
+  <p class="section-sub">Spots are limited to 20 players. Fill out the form below to register for the Pelican Lake Cup.</p>
 
-  <script src="js/main.js"></script>
+  <div class="form-container">
+    <form action="https://formsubmit.co/peterlundquist33@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Pelican Lake Cup Registration!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="form-group">
+        <label for="player-name">Full Name *</label>
+        <input type="text" id="player-name" name="Name" placeholder="e.g. Tiger Woods" required>
+      </div>
+      <div class="form-group">
+        <label for="player-email">Email *</label>
+        <input type="email" id="player-email" name="Email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="player-handicap">Handicap Index</label>
+        <input type="text" id="player-handicap" name="Handicap" placeholder="e.g. 12.4 (leave blank if unknown)">
+      </div>
+      <button type="submit" class="form-submit">Register</button>
+      <p class="form-note">You'll receive confirmation details via email.</p>
+    </form>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <p><strong>Pelican Lake Cup</strong> &copy; 2027 &mdash; Let the best team win.</p>
+</footer>
+
+<script>
+(function(){
+  // Countdown to September 1, 2027, 8:00 AM Central (CDT = UTC-5) => 13:00 UTC
+  var TARGET=new Date('2027-09-01T13:00:00Z').getTime();
+  function two(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var d=document.getElementById('cd-d'); if(!d) return;
+    var diff=TARGET-Date.now();
+    var tag=document.getElementById('cd-tagline');
+    if(diff<=0){
+      d.textContent='0';
+      document.getElementById('cd-h').textContent='00';
+      document.getElementById('cd-m').textContent='00';
+      document.getElementById('cd-s').textContent='00';
+      if(tag) tag.textContent="it's go time 🏌️";
+      return;
+    }
+    var s=Math.floor(diff/1000);
+    var days=Math.floor(s/86400); s-=days*86400;
+    var hrs=Math.floor(s/3600); s-=hrs*3600;
+    var mins=Math.floor(s/60); s-=mins*60;
+    d.textContent=days;
+    document.getElementById('cd-h').textContent=two(hrs);
+    document.getElementById('cd-m').textContent=two(mins);
+    document.getElementById('cd-s').textContent=two(s);
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
 </body>
 </html>
