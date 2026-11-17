@@ -1,106 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course Info — Pelican Lake Cup</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Course — The Pelican Lake Cup</title>
+<meta name="description" content="Deacon's Lodge Golf Course, Breezy Point, Minnesota — an Arnold Palmer Signature design and the battlefield of the Pelican Lake Cup.">
+<meta name="theme-color" content="#15191A">
+<link rel="icon" href="PLC-Logo-Transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="--crest:url('logo.jpg')">
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Pelican Lake <span>Cup</span></a>
-      <div class="nav-toggle">
-        <span></span><span></span><span></span>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead is-static">
+  <div class="masthead-inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-crest" aria-hidden="true"></span>
+      <span class="wordmark-text">
+        <b>Pelican Lake Cup</b>
+        <span>Est. 2020</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#field">The Field</a>
+      <a href="course.html">The Course</a>
+      <a href="format.html">Format</a>
+      <a href="history.html">History</a>
+      <a class="nav-cta" href="signup.html">Enter the Field</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-head">
+  <p class="eyebrow">The Battlefield</p>
+  <h1>The Course</h1>
+  <div class="rule"><i></i></div>
+  <p>Know the ground before you step on it.</p>
+</section>
+
+<!-- Editorial feature -->
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div class="editorial" data-reveal>
+        <p class="eyebrow">Breezy Point, Minnesota</p>
+        <h2>Deacon's Lodge</h2>
+        <div class="rule rule--left"><i></i></div>
+        <p class="lede">An Arnold Palmer Signature design, opened in 1999 across 150 acres of Minnesota's Brainerd Lakes country. Mixed forest, wetland, and the shoreline of Pelican Lake make it one of the state's most beautiful — and least forgiving — layouts.</p>
+        <p class="lede mt-1">It is also the Cup's home ground. Deacon's hosted the inaugural weekend in 2020, returned in the 2023 rotation, and held all three rounds in 2024.</p>
+        <dl class="spec-list">
+          <div><dt>Design</dt><dd>Arnold Palmer Signature</dd></div>
+          <div><dt>Opened</dt><dd>1999</dd></div>
+          <div><dt>Par</dt><dd>72</dd></div>
+          <div><dt>Holes</dt><dd>18</dd></div>
+          <div><dt>Greens</dt><dd>Penncross bentgrass</dd></div>
+          <div><dt>Facility</dt><dd>Spikeless</dd></div>
+          <div><dt>Address</dt><dd>9252 Breezy Point Drive, Breezy Point, MN</dd></div>
+        </dl>
       </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="history.html">History</a>
-        <a href="format.html">Format</a>
-        <a href="course.html">Course</a>
-        <a href="signup.html">Sign Up</a>
+      <div class="plate" data-reveal>
+        <img src="PLC-Logo-Transparent.png" alt="The Pelican Lake Cup mark">
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <h1>Course Information</h1>
-    <p>Know the battlefield before you step on it.</p>
-  </section>
+<section class="band band--tight band--dark">
+  <div class="wrap">
+    <div class="stats" data-reveal>
+      <div class="stat"><b data-count="72">72</b><span>Par</span></div>
+      <div class="stat"><b data-count="18">18</b><span>Holes</span></div>
+      <div class="stat"><b data-count="150">150</b><span>Acres</span></div>
+      <div class="stat"><b>1999</b><span>Opened</span></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Course Details -->
-  <section class="section">
-    <h2 class="section-title">Tee Options</h2>
-    <div class="gold-line"></div>
-    <p class="section-subtitle">Four tee boxes available. Tee assignments will be based on handicap and format requirements.</p>
-
-    <table class="course-table">
-      <thead>
-        <tr>
-          <th>Tees</th>
-          <th>Slope</th>
-          <th>Rating</th>
-          <th>Yardage</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="tee-dot tee-black"></span> Black</td>
-          <td>144</td>
-          <td>74.1</td>
-          <td>6,964</td>
-        </tr>
-        <tr>
-          <td><span class="tee-dot tee-blue"></span> Blue</td>
-          <td>142</td>
-          <td>72.3</td>
-          <td>6,541</td>
-        </tr>
-        <tr>
-          <td><span class="tee-dot tee-combo"></span> Combo</td>
-          <td>133</td>
-          <td>71.6</td>
-          <td>6,418</td>
-        </tr>
-        <tr>
-          <td><span class="tee-dot tee-white"></span> White</td>
-          <td>130</td>
-          <td>70.0</td>
-          <td>6,067</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Course Notes -->
-  <section class="section" style="padding-top: 0;">
-    <h2 class="section-title">Course Notes</h2>
-    <div class="gold-line"></div>
-
-    <div class="info-block">
-      <h3>📍 Location</h3>
-      <p>Pelican Lake area, Breezy Point, Minnesota. Full course name and address to be confirmed.</p>
+<!-- Tees -->
+<section class="band band--ivory">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Setup</p>
+      <h2>Tee Options</h2>
+      <div class="rule"><i></i></div>
+      <p class="lede">Four tee boxes are available. Tee assignments are based on handicap index and the requirements of each format.</p>
     </div>
 
-    <div class="info-block">
-      <h3>🏌️ Handicap Calculation</h3>
-      <p>All handicap adjustments are calculated using the <strong>course slope and rating</strong> from the tees played. Each format uses a different percentage of course handicap — see the <a href="format.html" style="color: var(--green-mid); font-weight: 600;">Format</a> page for specifics.</p>
+    <div class="table-wrap" data-reveal>
+      <table class="sheet">
+        <caption>Course Rating &amp; Slope</caption>
+        <thead>
+          <tr><th scope="col">Tees</th><th scope="col">Slope</th><th scope="col">Rating</th><th scope="col">Yardage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tee-dot tee-black"></span>Black</td><td>144</td><td>74.1</td><td>6,964</td></tr>
+          <tr><td><span class="tee-dot tee-blue"></span>Blue</td><td>142</td><td>72.3</td><td>6,541</td></tr>
+          <tr><td><span class="tee-dot tee-combo"></span>Combo</td><td>133</td><td>71.6</td><td>6,418</td></tr>
+          <tr><td><span class="tee-dot tee-white"></span>White</td><td>130</td><td>70.0</td><td>6,067</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="info-block">
-      <h3>⚡ Course Conditions</h3>
-      <p>Details on cart rules, dress code, practice facilities, and pace-of-play expectations will be shared closer to the event.</p>
+    <div class="card-grid cols-3 mt-3">
+      <div class="note" data-reveal>
+        <h3>Handicap Calculation</h3>
+        <p>All adjustments use the course slope and rating from the tees played:</p>
+        <p class="mt-1"><strong>Course Handicap = Index × (Slope ÷ 113) + (Course Rating − Par)</strong></p>
+        <p class="mt-1">Each round then applies its own allowance — see the <a href="format.html">Format</a> page.</p>
+      </div>
+      <div class="note" data-reveal>
+        <h3>Course Rotation</h3>
+        <p>Past Cups have moved between Deacons Lodge, Whitefish, White Birch, Crosswoods, and Golden Eagle. The 2027 rotation is confirmed closer to the event.</p>
+      </div>
+      <div class="note" data-reveal>
+        <h3>Course Conditions</h3>
+        <p>Cart rules, dress code, practice facilities, and pace-of-play expectations will be shared closer to the event.</p>
+      </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p><strong>Pelican Lake Cup</strong> &copy; 2027 &mdash; Let the best team win.</p>
-  </footer>
+    <div class="btn-row btn-row--center mt-3" data-reveal>
+      <a class="btn btn--outline" href="format.html"><span>Tournament Format</span></a>
+      <a class="btn btn--gold" href="signup.html"><span>Enter the Field</span></a>
+    </div>
+  </div>
+</section>
 
-  <script src="js/main.js"></script>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-crest" aria-hidden="true"></div>
+        <h3>The Pelican Lake Cup</h3>
+        <p>A Ryder Cup-style showdown between family and friends. Two teams. Five formats. One trophy. Bragging rights forever.</p>
+      </div>
+      <div class="footer-col">
+        <h4>The Tournament</h4>
+        <ul>
+          <li><a href="index.html#field">The Field</a></li>
+          <li><a href="index.html#weekend">Championship Weekend</a></li>
+          <li><a href="format.html">Format</a></li>
+          <li><a href="history.html">Championship History</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Venue</h4>
+        <ul>
+          <li><a href="course.html">Deacon's Lodge</a></li>
+          <li>9252 Breezy Point Drive</li>
+          <li>Breezy Point, Minnesota</li>
+          <li><a href="signup.html">Enter the Field</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><strong>Pelican Lake Cup</strong> &nbsp;·&nbsp; Established 2020 &nbsp;·&nbsp; A Lundquist Family Production</p>
+      <p>Let the best team win.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

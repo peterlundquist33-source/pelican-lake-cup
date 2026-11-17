@@ -1,76 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up — Pelican Lake Cup</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enter the Field — The Pelican Lake Cup</title>
+<meta name="description" content="Register for the 2027 Pelican Lake Cup. The field is limited to twenty players; captains draft their rosters from the registered field.">
+<meta name="theme-color" content="#15191A">
+<link rel="icon" href="PLC-Logo-Transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="--crest:url('logo.jpg')">
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Pelican Lake <span>Cup</span></a>
-      <div class="nav-toggle">
-        <span></span><span></span><span></span>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead is-static">
+  <div class="masthead-inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-crest" aria-hidden="true"></span>
+      <span class="wordmark-text">
+        <b>Pelican Lake Cup</b>
+        <span>Est. 2020</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#field">The Field</a>
+      <a href="course.html">The Course</a>
+      <a href="format.html">Format</a>
+      <a href="history.html">History</a>
+      <a class="nav-cta" href="signup.html">Enter the Field</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-head">
+  <p class="eyebrow">Registration</p>
+  <h1>Enter the Field</h1>
+  <div class="rule"><i></i></div>
+  <p>The field is limited to twenty players — ten per side.</p>
+</section>
+
+<section class="band band--forest">
+  <div class="wrap">
+    <div class="form-card" data-reveal>
+      <div class="form-card-head">
+        <p class="eyebrow">2027 Cup</p>
+        <h3>Player Registration</h3>
+        <p>Fill out the form below to put your name in front of the captains for the 2027 Pelican Lake Cup.</p>
       </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="history.html">History</a>
-        <a href="format.html">Format</a>
-        <a href="course.html">Course</a>
-        <a href="signup.html">Sign Up</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <section class="page-header">
-    <h1>Sign Up</h1>
-    <p>Claim your spot. Spots are limited to 20 players.</p>
-  </section>
-
-  <!-- Sign Up Form -->
-  <section class="section">
-    <div class="form-container">
-      <h2 class="section-title" style="text-align: center; margin-bottom: 0.25rem;">Player Registration</h2>
-      <p class="section-subtitle" style="text-align: center;">Fill out the form below to register for the inaugural Pelican Lake Cup.</p>
 
       <form action="https://formsubmit.co/peterlundquist33@gmail.com" method="POST">
-        <!-- FormSubmit config -->
         <input type="hidden" name="_subject" value="New Pelican Lake Cup Registration!">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="">
-        <input type="text" name="_honey" style="display:none">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-        <div class="form-group">
+        <div class="field">
           <label for="player-name">Full Name *</label>
-          <input type="text" id="player-name" name="Name" placeholder="e.g. Tiger Woods" required>
+          <input type="text" id="player-name" name="Name" placeholder="First and last" autocomplete="name" required>
         </div>
 
-        <div class="form-group">
+        <div class="field">
           <label for="player-email">Email *</label>
-          <input type="email" id="player-email" name="Email" placeholder="you@example.com" required>
+          <input type="email" id="player-email" name="Email" placeholder="you@example.com" autocomplete="email" required>
         </div>
 
-        <div class="form-group">
+        <div class="field">
           <label for="player-handicap">Handicap Index</label>
-          <input type="text" id="player-handicap" name="Handicap" placeholder="e.g. 12.4 (leave blank if unknown)">
+          <input type="text" id="player-handicap" name="Handicap" placeholder="e.g. 12.4 — leave blank if unknown">
         </div>
 
-        <button type="submit" class="form-submit">Register</button>
-        <p class="form-note">You'll receive confirmation details via email.</p>
+        <button type="submit" class="form-submit"><span>Submit Registration</span></button>
+        <p class="form-fine">Registration does not guarantee a roster spot — captains draft from the field. You'll receive confirmation details by email.</p>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p><strong>Pelican Lake Cup</strong> &copy; 2027 &mdash; Let the best team win.</p>
-  </footer>
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Before You Enter</p>
+      <h2>What to Expect</h2>
+      <div class="rule"><i></i></div>
+    </div>
 
-  <script src="js/main.js"></script>
+    <div class="card-grid cols-3">
+      <div class="note" data-reveal>
+        <h3>Handicaps</h3>
+        <p>A GHIN or verified handicap index is preferred. No GHIN? Your average score can be used to set a fair index. Every format applies its own allowance — see <a href="format.html">Format</a>.</p>
+      </div>
+      <div class="note" data-reveal>
+        <h3>The Draft</h3>
+        <p>Captains select their rosters from the registered field. Registering early helps: in 2024 the draft moved forward so team shirts could be sized and ordered in time.</p>
+      </div>
+      <div class="note" data-reveal>
+        <h3>The Week</h3>
+        <p>Five rounds of competitive golf, an opening night dinner cooked by the Cinderella Boyz, side games, lake time, and the presentation of the Cup. See <a href="index.html#weekend">Championship Weekend</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-crest" aria-hidden="true"></div>
+        <h3>The Pelican Lake Cup</h3>
+        <p>A Ryder Cup-style showdown between family and friends. Two teams. Five formats. One trophy. Bragging rights forever.</p>
+      </div>
+      <div class="footer-col">
+        <h4>The Tournament</h4>
+        <ul>
+          <li><a href="index.html#field">The Field</a></li>
+          <li><a href="index.html#weekend">Championship Weekend</a></li>
+          <li><a href="format.html">Format</a></li>
+          <li><a href="history.html">Championship History</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Venue</h4>
+        <ul>
+          <li><a href="course.html">Deacon's Lodge</a></li>
+          <li>9252 Breezy Point Drive</li>
+          <li>Breezy Point, Minnesota</li>
+          <li><a href="signup.html">Enter the Field</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><strong>Pelican Lake Cup</strong> &nbsp;·&nbsp; Established 2020 &nbsp;·&nbsp; A Lundquist Family Production</p>
+      <p>Let the best team win.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

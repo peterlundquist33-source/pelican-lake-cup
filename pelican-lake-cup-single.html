@@ -1,482 +1,2270 @@
 <!DOCTYPE html>
+<!-- GENERATED FILE — do not edit by hand.
+     Source: index.html + css/style.css + js/main.js
+     Rebuild: python3 -I tools/build-exports.py -->
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Pelican Lake Cup</title>
+<title>The Pelican Lake Cup — September 2027 · Breezy Point, Minnesota</title>
+<meta name="description" content="The Pelican Lake Cup: a Ryder Cup-style showdown between family and friends. Two teams of ten, five formats, one trophy. September 2027 at Deacon's Lodge, Breezy Point, Minnesota.">
+<meta name="theme-color" content="#15191A">
+<meta property="og:title" content="The Pelican Lake Cup — September 2027">
+<meta property="og:description" content="Two teams of ten. Five formats. One trophy. A tradition worth competing for.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo.jpg">
+<link rel="icon" href="PLC-Logo-Transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
-:root{--teal:#00a9c4;--teal-dark:#007a91;--teal-light:#e4f6fa;--gold:#ffc72c;--cream:#f7f8f9;--white:#fff;--text:#1a1a1a;--text-light:#5a5a5a;--text-muted:#8a8a8a;--border:#dbe3e6}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:var(--text);-webkit-font-smoothing:antialiased}
-.ticker{background:var(--teal-dark);color:#fff;display:flex;align-items:stretch;font-size:.8rem;overflow:hidden;white-space:nowrap}
-.ticker-label{background:var(--teal);padding:10px 14px;font-weight:700;letter-spacing:1px;font-size:.65rem;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;z-index:2}
-.ticker-track-wrap{overflow:hidden;flex:1;display:flex;align-items:center}
-.ticker-track{display:inline-flex;align-items:center;animation:scroll 55s linear infinite}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-item{padding:10px 18px;border-right:1px solid rgba(255,255,255,.08);flex-shrink:0}
-.ticker-item .day-tag{color:var(--gold);font-weight:700}
-header{background:var(--white);border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:0;z-index:50}
-.header-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.cup-icon{font-size:3.2rem;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.18))}
-.header-logo h1{font-family:'Playfair Display',serif;font-size:3.4rem;color:var(--teal-dark);font-style:italic;font-weight:700;letter-spacing:2px;text-align:center;line-height:1.04;margin:2px 0;text-shadow:0 2px 10px rgba(0,122,145,.18)}
-@media(max-width:560px){.cup-icon{font-size:2.4rem}.header-logo h1{font-size:2.1rem;letter-spacing:1px}}
-.header-nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-.header-nav a{color:var(--text);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s}
-.header-nav a:hover{color:var(--teal)}
-.hero{background:var(--teal);color:#fff;text-align:center;padding:48px 24px;position:relative}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
-.hero .date-label{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;opacity:.8;margin-bottom:8px}
-.hero h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;letter-spacing:1px;margin-bottom:8px}
-.hero .location{font-size:.95rem;opacity:.85}
-.hero-logo{max-width:300px;width:70%;margin:0 auto 22px;border-radius:12px;filter:drop-shadow(0 8px 32px rgba(0,0,0,.3))}
-.countdown{display:flex;justify-content:center;align-items:flex-start;gap:10px;margin-top:22px}
-.cd-unit{display:flex;flex-direction:column;align-items:center;min-width:58px}
-.cd-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;line-height:1;color:var(--gold)}
-.cd-lab{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;opacity:.7;margin-top:5px}
-.cd-sep{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);opacity:.5;line-height:1.1}
-.cd-tagline{font-size:.78rem;letter-spacing:1px;opacity:.75;margin-top:12px;text-transform:uppercase}
-@media(max-width:440px){.cd-num{font-size:1.8rem}.cd-unit{min-width:44px}.cd-sep{font-size:1.5rem}}
-.hero-cta{display:inline-block;margin-top:22px;background:var(--gold);color:var(--teal-dark);padding:12px 30px;border-radius:6px;font-weight:700;text-decoration:none;letter-spacing:.5px;font-size:.9rem;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 14px rgba(0,0,0,.18)}
-.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
-.container{max-width:1000px;margin:0 auto;padding:0 16px}
-section{padding:44px 0;border-bottom:1px solid var(--border)}
-section:last-of-type{border-bottom:none}
-.page-label{font-size:.7rem;text-transform:uppercase;letter-spacing:3px;color:var(--text-muted);margin-bottom:4px;text-align:center}
-.page-title{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--teal-dark);margin-bottom:6px;font-weight:400;text-align:center}
-.section-sub{text-align:center;color:var(--text-light);max-width:640px;margin:0 auto 28px;font-size:.95rem;line-height:1.55}
-.gold-line{width:60px;height:3px;background:var(--gold);margin:0 auto 26px;border-radius:2px}
+/* ==========================================================================
+   THE PELICAN LAKE CUP — Design System
+   Deep charcoal · forest · warm ivory · restrained gold
+   Display: Fraunces  ·  Text: Inter
+   Fonts are loaded via <link> in each document head (not @import).
+   ========================================================================== */
 
-/* Matchup / VS hero */
-.vs-wrap{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:1rem 0 2rem}
-.vs-side{text-align:center;flex:1;min-width:230px}
-.vs-side img{max-width:240px;width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);margin-bottom:1rem}
-.vs-side h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--teal-dark)}
-.vs-side p{color:var(--text-muted);font-size:.9rem;margin-top:2px}
-.vs-mid{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--gold);flex-shrink:0}
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Surfaces */
+  --ink:          #090B0A;
+  --charcoal:     #15191A;
+  --charcoal-2:   #1D2325;
+  --charcoal-3:   #262D2F;
+  --forest:       #0F3528;
+  --forest-deep:  #09241B;
+  --forest-mid:   #16513C;
 
-/* Cards */
-.card-grid{display:grid;gap:16px;margin-top:8px}
-.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:22px 22px;box-shadow:0 4px 16px rgba(0,122,145,.06)}
-.card .round-badge{width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;margin-bottom:10px}
-.card h3{font-family:'Playfair Display',serif;color:var(--teal-dark);font-weight:700;font-size:1.15rem;margin-bottom:6px}
-.card p{color:var(--text-light);font-size:.9rem;line-height:1.55}
-.card .hcp-note{margin-top:.6rem;font-size:.85rem;color:var(--text)}
-.card .hcp-note strong{color:var(--teal-dark)}
+  /* Paper */
+  --ivory:        #F7F3EA;
+  --ivory-2:      #EFE8DA;
+  --paper:        #FCFAF5;
 
-/* Info blocks */
-.info-block{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:6px;padding:18px 20px;margin-bottom:14px}
-.info-block h3{font-family:'Playfair Display',serif;color:var(--teal-dark);font-size:1.1rem;margin-bottom:6px}
-.info-block p,.info-block li{color:var(--text-light);font-size:.9rem;line-height:1.6}
-.info-block ul{margin-left:1.1rem}
-.info-block a{color:var(--teal);font-weight:600;text-decoration:none}
+  /* Metal */
+  --gold:         #C8A54B;
+  --gold-light:   #E2C988;
+  --gold-deep:    #96762B;
 
-/* History */
-.hist-hero{background:linear-gradient(160deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;border-radius:12px;padding:26px 24px;margin-bottom:26px;box-shadow:0 10px 30px rgba(0,122,145,.25)}
-.hist-hero-top{display:flex;justify-content:space-between;font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;opacity:.85;margin-bottom:14px}
-.hist-scoreboard{display:flex;align-items:center;justify-content:center;gap:1.4rem;margin-bottom:16px}
-.hist-team{text-align:center;flex:1}
-.hist-team-label{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;opacity:.9}
-.hist-team-score{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:700;color:var(--gold);line-height:1}
-.hist-team-note{font-size:.75rem;opacity:.8;margin-top:2px}
-.hist-vs{font-family:'Playfair Display',serif;font-size:1.4rem;opacity:.7}
-.hist-hero-copy{font-size:.9rem;line-height:1.6;opacity:.95;text-align:center;max-width:640px;margin:0 auto}
-.hist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:26px}
-.hist-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(0,122,145,.06)}
-.hist-card.muted{opacity:.72}
-.hist-card.next{border:2px dashed var(--gold);background:var(--teal-light)}
-.hist-card-head{display:flex;justify-content:space-between;align-items:baseline;font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px}
-.hist-card-head strong{color:var(--teal)}
-.hist-card h3{font-family:'Playfair Display',serif;color:var(--teal-dark);font-size:1.15rem;margin-bottom:4px}
-.hist-meta{font-size:.78rem;color:var(--text-muted);margin-bottom:8px;font-style:italic}
-.hist-card p{font-size:.88rem;color:var(--text-light);line-height:1.55;margin-bottom:8px}
-.hist-card ul{margin-left:1.1rem;font-size:.85rem;color:var(--text-light);line-height:1.5}
-.hist-card ul strong{color:var(--text)}
+  /* Type */
+  --text:         #1A1D1C;
+  --text-soft:    #4C5250;
+  --text-muted:   #767B78;
+  --on-dark:      rgba(247, 243, 234, 0.92);
+  --on-dark-soft: rgba(247, 243, 234, 0.66);
+  --on-dark-mute: rgba(247, 243, 234, 0.42);
 
-/* Tables */
-.data-table{width:100%;background:var(--white);border:1px solid var(--border);border-collapse:collapse;border-radius:8px;overflow:hidden;font-size:.9rem;margin-top:8px}
-.data-table th{background:rgba(0,169,196,.08);padding:10px 12px;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--teal-dark);border-bottom:1px solid var(--border)}
-.data-table td{padding:11px 12px;border-bottom:1px solid var(--border);color:var(--text)}
-.data-table tr:last-child td{border-bottom:none}
-.data-table tr:nth-child(even) td{background:rgba(0,0,0,.015)}
-.tee-dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:middle;border:1px solid rgba(0,0,0,.15)}
-.tee-black{background:#222}.tee-blue{background:#2b6fd6}.tee-combo{background:#7a5cd0}.tee-white{background:#f2f2f2}
+  /* Rules */
+  --line:         rgba(26, 29, 28, 0.13);
+  --line-strong:  rgba(26, 29, 28, 0.22);
+  --line-dark:    rgba(247, 243, 234, 0.13);
+  --line-gold:    rgba(200, 165, 75, 0.38);
 
-/* Split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:640px){.split{grid-template-columns:1fr}.hist-scoreboard{gap:.8rem}.hist-team-score{font-size:2.6rem}}
+  /* Shadow — restrained, never puffy */
+  --lift:    0 1px 2px rgba(9, 11, 10, 0.05), 0 8px 28px rgba(9, 11, 10, 0.07);
+  --lift-lg: 0 2px 4px rgba(9, 11, 10, 0.06), 0 22px 60px rgba(9, 11, 10, 0.13);
 
-/* Form */
-.form-container{max-width:520px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px 26px;box-shadow:0 6px 24px rgba(0,122,145,.08)}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--teal-dark);margin-bottom:5px}
-.form-group input{width:100%;padding:11px 13px;border:1px solid var(--border);border-radius:6px;font-size:.92rem;font-family:inherit;background:var(--cream)}
-.form-group input:focus{outline:none;border-color:var(--teal);background:#fff}
-.form-submit{width:100%;background:var(--teal);color:#fff;border:none;padding:13px;border-radius:6px;font-size:.95rem;font-weight:700;letter-spacing:.5px;cursor:pointer;transition:background .2s}
-.form-submit:hover{background:var(--teal-dark)}
-.form-note{text-align:center;font-size:.78rem;color:var(--text-muted);margin-top:12px}
+  /* Metrics */
+  --wrap:        1180px;
+  --wrap-text:   820px;
+  --nav-h:       76px;
+  --ease:        cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
 
-.footer{background:var(--teal-dark);color:#fff;text-align:center;padding:26px 16px;font-size:.85rem}
-.footer strong{color:var(--gold)}
+  /* Texture — a faint woven linen, used on dark panels only */
+  --weave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23F7F3EA' stroke-opacity='0.035' stroke-width='1'%3E%3Cpath d='M0 20h120M0 50h120M0 80h120M0 110h120'/%3E%3Cpath d='M20 0v120M50 0v120M80 0v120M110 0v120'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.68;
+  color: var(--text);
+  background: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font: inherit; }
+
+::selection { background: var(--gold); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.skip-link:focus { left: 0; }
+
+/* --------------------------------------------------------------------------
+   3. Typography primitives
+   -------------------------------------------------------------------------- */
+.display {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.012em;
+  font-variation-settings: 'SOFT' 0, 'WONK' 0;
+}
+
+/* Small tracked label — the workhorse of the whole system */
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.on-dark .eyebrow,
+.panel-dark .eyebrow { color: var(--gold); }
+
+.lede {
+  font-size: clamp(1.02rem, 1.6vw, 1.14rem);
+  line-height: 1.75;
+  color: var(--text-soft);
+}
+
+/* Gold hairline with a centred diamond — the section signature */
+.rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.4rem auto 0;
+  width: min(220px, 60%);
+}
+.rule::before,
+.rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold) 55%, transparent);
+  opacity: 0.75;
+}
+.rule i {
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex: none;
+}
+.rule--left { margin-left: 0; justify-content: flex-start; width: 140px; }
+.rule--left::before { display: none; }
+
+/* --------------------------------------------------------------------------
+   4. Layout
+   -------------------------------------------------------------------------- */
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+.wrap-text { max-width: var(--wrap-text); margin-left: auto; margin-right: auto; }
+
+.band { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
+.band--tight { padding: clamp(3rem, 6vw, 5rem) 0; }
+.band--paper { background: var(--paper); }
+.band--ivory { background: var(--ivory); }
+.band--ivory-2 { background: var(--ivory-2); }
+
+.band--dark {
+  background: var(--charcoal);
+  color: var(--on-dark);
+}
+.band--forest {
+  background: linear-gradient(170deg, var(--forest) 0%, var(--forest-deep) 100%);
+  color: var(--on-dark);
+}
+.band--dark::before,
+.band--forest::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--weave);
+  pointer-events: none;
+}
+.band--dark > *,
+.band--forest > * { position: relative; z-index: 1; }
+
+.band--dark .lede,
+.band--forest .lede { color: var(--on-dark-soft); }
+
+/* Hairline divider between bands */
+.band + .band { border-top: 1px solid var(--line); }
+.band--dark + .band--dark,
+.band--dark + .band--forest,
+.band--forest + .band--dark { border-top: 1px solid var(--line-dark); }
+
+.section-head { text-align: center; max-width: 760px; margin: 0 auto clamp(2.75rem, 5vw, 4rem); }
+.section-head h2 {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin-top: 0.7rem;
+}
+.section-head .lede { margin-top: 1.5rem; }
+.section-head .rule { margin-top: 1.6rem; }
+
+.section-head--left { text-align: left; margin-left: 0; }
+.section-head--left .rule { margin-left: 0; justify-content: flex-start; width: 140px; }
+.section-head--left .rule::before { display: none; }
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem 2.1rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s var(--ease), background-color 0.5s var(--ease),
+              border-color 0.5s var(--ease);
+}
+/* The fill sweeps in from the bottom — quiet, not flashy */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s var(--ease-out);
+  z-index: 0;
+}
+.btn > span { position: relative; z-index: 1; }
+.btn:hover::after, .btn:focus-visible::after { transform: scaleY(1); }
+
+.btn--gold { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.btn--gold::after { background: var(--ink); }
+.btn--gold:hover, .btn--gold:focus-visible { color: var(--gold); border-color: var(--ink); }
+
+.btn--outline { border-color: var(--line-strong); color: var(--text); }
+.btn--outline:hover, .btn--outline:focus-visible { color: var(--ink); border-color: var(--gold); }
+
+.btn--ghost { border-color: rgba(247, 243, 234, 0.3); color: var(--on-dark); }
+.btn--ghost:hover, .btn--ghost:focus-visible { color: var(--ink); border-color: var(--gold); }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+.btn-row--center { justify-content: center; }
+
+/* Quiet text link with a gold underline that draws in */
+.link-gold {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  padding-bottom: 3px;
+  position: relative;
+}
+.panel-dark .link-gold, .band--dark .link-gold, .band--forest .link-gold { color: var(--gold); }
+.link-gold::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(0.28);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease-out);
+}
+.link-gold:hover::after, .link-gold:focus-visible::after { transform: scaleX(1); }
+
+/* --------------------------------------------------------------------------
+   6. Masthead / navigation
+   -------------------------------------------------------------------------- */
+.masthead {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.5s var(--ease), border-color 0.5s var(--ease),
+              backdrop-filter 0.5s var(--ease);
+}
+.masthead.is-solid {
+  background: rgba(13, 16, 17, 0.93);
+  border-bottom-color: var(--line-gold);
+  backdrop-filter: saturate(140%) blur(10px);
+}
+/* Interior pages start solid — there is no hero behind the bar */
+.masthead.is-static { background: var(--charcoal); border-bottom-color: var(--line-gold); }
+
+.masthead-inner {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.wordmark { display: flex; align-items: center; gap: 0.85rem; flex: none; }
+/* --crest is set on <body> in each document so the path resolves the same way
+   in the linked site and in the inlined single-file exports. Declaring it once
+   also means the portable build embeds the crest a single time. */
+.wordmark-crest {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--ivory) var(--crest) center / 150% no-repeat;
+  border: 1px solid var(--line-gold);
+  flex: none;
+}
+.wordmark-text { line-height: 1.1; }
+.wordmark-text b {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 1.04rem;
+  letter-spacing: 0.01em;
+  color: var(--ivory);
+}
+.wordmark-text span {
+  display: block;
+  font-size: 0.56rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.nav { display: flex; align-items: center; gap: clamp(1.1rem, 2.4vw, 2rem); }
+.nav a {
+  font-size: 0.71rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 234, 0.72);
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color 0.35s var(--ease);
+  white-space: nowrap;
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease-out);
+}
+.nav a:hover, .nav a.is-active { color: var(--ivory); }
+.nav a:hover::after, .nav a.is-active::after { transform: scaleX(1); }
+
+.nav-cta {
+  margin-left: 0.5rem;
+  padding: 0.62rem 1.3rem;
+  border: 1px solid var(--line-gold);
+  color: var(--gold) !important;
+  transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
+}
+.nav-cta::after { display: none; }
+.nav-cta:hover, .nav-cta:focus-visible { background: var(--gold); color: var(--ink) !important; }
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  background: none; border: none;
+  cursor: pointer;
+  position: relative;
+  flex: none;
+}
+.nav-toggle span {
+  position: absolute;
+  left: 11px;
+  width: 22px; height: 1px;
+  background: var(--ivory);
+  transition: transform 0.4s var(--ease), opacity 0.25s var(--ease);
+}
+.nav-toggle span:nth-child(1) { top: 17px; }
+.nav-toggle span:nth-child(2) { top: 22px; }
+.nav-toggle span:nth-child(3) { top: 27px; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+
+@media (max-width: 1000px) {
+  .nav-toggle { display: block; }
+  .nav {
+    position: fixed;
+    inset: var(--nav-h) 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--charcoal);
+    border-bottom: 1px solid var(--line-gold);
+    padding: 0.5rem 0 1.5rem;
+    transform: translateY(-110%);
+    transition: transform 0.55s var(--ease-out);
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+  }
+  .nav.is-open { transform: translateY(0); }
+  .nav a {
+    padding: 1rem clamp(1.25rem, 5vw, 2.5rem);
+    border-bottom: 1px solid var(--line-dark);
+    font-size: 0.78rem;
+  }
+  .nav a::after { display: none; }
+  .nav-cta {
+    margin: 1.25rem clamp(1.25rem, 5vw, 2.5rem) 0;
+    text-align: center;
+    border-bottom: 1px solid var(--line-gold) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Hero
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-h) + 3.5rem) clamp(1.25rem, 4vw, 2.5rem) 5rem;
+  background: var(--ink);
+  overflow: hidden;
+  color: var(--on-dark);
+}
+.hero-bg {
+  position: absolute;
+  inset: -8% 0 -8% 0;
+  background:
+    radial-gradient(120% 85% at 50% 8%, rgba(22, 81, 60, 0.55) 0%, transparent 62%),
+    radial-gradient(95% 70% at 50% 108%, rgba(15, 53, 40, 0.75) 0%, transparent 70%),
+    linear-gradient(175deg, #0D1413 0%, #0A100F 48%, #070A09 100%);
+  will-change: transform;
+  z-index: 0;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--weave);
+  opacity: 0.9;
+}
+/* Vignette keeps the eye centred */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 42%, rgba(5, 7, 6, 0.6) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-inner { position: relative; z-index: 2; max-width: 880px; width: 100%; }
+
+.hero-crest {
+  width: clamp(96px, 13vw, 132px);
+  height: clamp(96px, 13vw, 132px);
+  margin: 0 auto clamp(1.75rem, 3.5vw, 2.5rem);
+  border-radius: 50%;
+  background: var(--ivory) var(--crest) center / 150% no-repeat;
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 0 7px rgba(200, 165, 75, 0.1), 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero-eyebrow {
+  font-size: clamp(0.6rem, 1.2vw, 0.7rem);
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: clamp(1.1rem, 2.4vw, 1.6rem);
+}
+.hero h1 {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(2.7rem, 8.4vw, 6.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  color: var(--ivory);
+}
+.hero h1 em {
+  display: block;
+  font-style: normal;
+  font-size: 0.42em;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-top: 0.5rem;
+  font-weight: 300;
+}
+.hero-year {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  margin-top: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-size: clamp(0.78rem, 1.7vw, 0.95rem);
+  letter-spacing: 0.45em;
+  text-indent: 0.45em;
+  color: var(--gold-light);
+  font-weight: 300;
+}
+.hero-year::before, .hero-year::after {
+  content: '';
+  width: clamp(26px, 6vw, 54px);
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+.hero-tagline {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+  color: var(--on-dark-soft);
+  margin-top: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.5;
+}
+.hero-meta {
+  margin-top: 1.1rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+}
+.hero .btn-row { margin-top: clamp(2.2rem, 4.5vw, 3rem); }
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 0.56rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+.scroll-cue i {
+  width: 1px; height: 42px;
+  background: linear-gradient(var(--gold), transparent);
+  animation: cue 2.6s var(--ease) infinite;
+  transform-origin: top;
+}
+@keyframes cue {
+  0%   { transform: scaleY(0); opacity: 0; }
+  35%  { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* Countdown — hairline cells, no boxes */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: clamp(2.2rem, 4.5vw, 3.2rem);
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+}
+.cd-cell {
+  flex: 1;
+  max-width: 130px;
+  padding: clamp(1rem, 2.2vw, 1.4rem) 0.4rem;
+  border-right: 1px solid var(--line-dark);
+}
+.cd-cell:last-child { border-right: none; }
+.cd-num {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: clamp(1.75rem, 4.6vw, 2.9rem);
+  line-height: 1;
+  color: var(--ivory);
+  font-variant-numeric: tabular-nums;
+}
+.cd-lab {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.54rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+}
+.cd-note {
+  margin-top: 1rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   8. Interior page header (non-home pages)
+   -------------------------------------------------------------------------- */
+.page-head {
+  position: relative;
+  background: linear-gradient(170deg, var(--charcoal) 0%, var(--ink) 100%);
+  color: var(--on-dark);
+  text-align: center;
+  padding: calc(var(--nav-h) + clamp(4rem, 8vw, 7rem)) clamp(1.25rem, 4vw, 2.5rem) clamp(3.5rem, 7vw, 6rem);
+  border-bottom: 1px solid var(--line-gold);
+  overflow: hidden;
+}
+.page-head::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--weave);
+}
+.page-head > * { position: relative; z-index: 1; }
+.page-head h1 {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5.6vw, 3.9rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ivory);
+  margin-top: 0.8rem;
+}
+.page-head p {
+  max-width: 620px;
+  margin: 1.4rem auto 0;
+  color: var(--on-dark-soft);
+  font-size: clamp(0.98rem, 1.8vw, 1.1rem);
+}
+.page-head .rule { margin-top: 1.6rem; }
+
+/* --------------------------------------------------------------------------
+   9. At a Glance — hairline credential strip
+   -------------------------------------------------------------------------- */
+.glance {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line-dark);
+}
+.glance-cell {
+  padding: clamp(1.5rem, 3vw, 2.3rem) clamp(1rem, 2vw, 1.75rem);
+  border-right: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+}
+.glance-cell:nth-child(3n) { border-right: none; }
+.glance-cell:nth-last-child(-n+3) { border-bottom: none; }
+.glance-cell dt {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.85rem;
+}
+.glance-cell dd {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.3vw, 1.5rem);
+  line-height: 1.25;
+  color: var(--ivory);
+}
+.glance-cell dd small {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+  color: var(--on-dark-mute);
+}
+@media (max-width: 860px) {
+  .glance { grid-template-columns: repeat(2, 1fr); }
+  .glance-cell:nth-child(3n) { border-right: 1px solid var(--line-dark); }
+  .glance-cell:nth-child(2n) { border-right: none; }
+  .glance-cell:nth-last-child(-n+3) { border-bottom: 1px solid var(--line-dark); }
+  .glance-cell:nth-last-child(-n+2) { border-bottom: none; }
+}
+@media (max-width: 520px) {
+  .glance { grid-template-columns: 1fr; }
+  .glance-cell { border-right: none !important; border-bottom: 1px solid var(--line-dark) !important; }
+  .glance-cell:last-child { border-bottom: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   10. The Field — broadcast team announcement
+   -------------------------------------------------------------------------- */
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+.field-vs {
+  align-self: center;
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  position: relative;
+  padding: 1.5rem 0;
+}
+.field-vs::before, .field-vs::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: clamp(30px, 6vw, 70px);
+  background: linear-gradient(var(--gold), transparent);
+  opacity: 0.45;
+}
+.field-vs::before { bottom: 100%; background: linear-gradient(transparent, var(--gold)); }
+.field-vs::after  { top: 100%; }
+
+.team-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  padding: clamp(1.75rem, 3.4vw, 2.75rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
+}
+.team-card:hover { transform: translateY(-4px); box-shadow: var(--lift-lg); }
+.team-crest {
+  width: clamp(130px, 22vw, 190px);
+  height: clamp(130px, 22vw, 190px);
+  margin: 0 auto clamp(1.3rem, 2.6vw, 1.8rem);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--line-gold);
+  box-shadow: 0 0 0 6px rgba(200, 165, 75, 0.08);
+  display: grid;
+  place-items: center;
+  background: var(--charcoal);
+}
+.team-crest img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-out);
+}
+.team-card:hover .team-crest img { transform: scale(1.06); }
+.team-card h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2.05rem);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.team-status {
+  margin-top: 0.85rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.team-meta {
+  margin-top: 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.7rem;
+}
+.team-meta div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.82rem;
+}
+.team-meta dt { color: var(--text-muted); letter-spacing: 0.06em; }
+.team-meta dd { font-weight: 600; text-align: right; }
+
+@media (max-width: 880px) {
+  .field-grid { grid-template-columns: 1fr; }
+  .field-vs { padding: 0.5rem 0; }
+  .field-vs::before, .field-vs::after { height: 24px; }
+}
+
+/* --------------------------------------------------------------------------
+   11. Cards — scorecard / credential stationery
+   -------------------------------------------------------------------------- */
+.card-grid { display: grid; gap: clamp(1rem, 2vw, 1.5rem); }
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .cols-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 680px) { .cols-2, .cols-3 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: clamp(1.6rem, 3vw, 2.25rem);
+  position: relative;
+  transition: transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out),
+              border-color 0.6s var(--ease-out);
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--lift); border-color: var(--line-gold); }
+.card h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+  line-height: 1.22;
+  margin-bottom: 0.75rem;
+}
+.card p { color: var(--text-soft); font-size: 0.93rem; }
+.card--dark {
+  background: var(--charcoal-2);
+  border-color: var(--line-dark);
+  color: var(--on-dark);
+}
+.card--dark h3 { color: var(--ivory); }
+.card--dark p { color: var(--on-dark-soft); }
+
+/* Numbered round card */
+.round-card { display: flex; flex-direction: column; }
+.round-no {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+.round-card h3 { margin-bottom: 0.6rem; }
+.allowance {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.allowance dt {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.allowance dd {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--gold-deep);
+  text-align: right;
+}
+
+/* Note block — a quiet gold-edged aside */
+.note {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--gold);
+  padding: clamp(1.4rem, 2.6vw, 2rem);
+}
+.note h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 1.18rem;
+  margin-bottom: 0.6rem;
+}
+.note p, .note li { color: var(--text-soft); font-size: 0.93rem; }
+.note ul { margin-top: 0.5rem; }
+.note li { position: relative; padding-left: 1.3rem; margin-bottom: 0.5rem; }
+.note li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.72em;
+  width: 4px; height: 4px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.note a { color: var(--gold-deep); font-weight: 600; border-bottom: 1px solid var(--line-gold); }
+.note--dark {
+  background: rgba(247, 243, 234, 0.04);
+  border-color: var(--line-dark);
+  border-left-color: var(--gold);
+}
+.note--dark h3 { color: var(--ivory); }
+.note--dark p, .note--dark li { color: var(--on-dark-soft); }
+.note--dark a { color: var(--gold); }
+
+/* --------------------------------------------------------------------------
+   12. Stat row — animated figures
+   -------------------------------------------------------------------------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+}
+.stat {
+  text-align: center;
+  padding: clamp(1.6rem, 3vw, 2.4rem) 0.75rem;
+  border-right: 1px solid var(--line-dark);
+}
+.stat:last-child { border-right: none; }
+.stat b {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.stat span {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+}
+.stats--light { border-color: var(--line); }
+.stats--light .stat { border-right-color: var(--line); }
+.stats--light .stat b { color: var(--forest); }
+.stats--light .stat span { color: var(--text-muted); }
+@media (max-width: 680px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2n) { border-right: none; }
+  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line-dark); }
+  .stats--light .stat:nth-child(-n+2) { border-bottom-color: var(--line); }
+}
+
+/* --------------------------------------------------------------------------
+   13. Editorial split (course feature)
+   -------------------------------------------------------------------------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.split--wide { grid-template-columns: 1.1fr 0.9fr; }
+@media (max-width: 880px) { .split, .split--wide { grid-template-columns: 1fr; } }
+
+.plate {
+  position: relative;
+  background: var(--ivory-2);
+  border: 1px solid var(--line);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.plate::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--line-gold);
+  pointer-events: none;
+}
+.plate img { width: 100%; transition: transform 1.4s var(--ease-out); }
+.plate:hover img { transform: scale(1.03); }
+
+.editorial h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  margin-top: 0.7rem;
+}
+.editorial .lede { margin-top: 1.4rem; }
+.editorial .btn-row { margin-top: 2rem; }
+
+.spec-list {
+  margin-top: 1.9rem;
+  border-top: 1px solid var(--line);
+}
+.spec-list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+}
+.spec-list dt {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex: none;
+}
+.spec-list dd { text-align: right; color: var(--text); }
+.band--dark .spec-list, .band--forest .spec-list { border-color: var(--line-dark); }
+.band--dark .spec-list div, .band--forest .spec-list div { border-color: var(--line-dark); }
+.band--dark .spec-list dd, .band--forest .spec-list dd { color: var(--ivory); }
+
+/* --------------------------------------------------------------------------
+   14. Tables — scorecard ruled, never zebra-striped
+   -------------------------------------------------------------------------- */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  -webkit-overflow-scrolling: touch;
+}
+table.sheet {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 540px;
+}
+table.sheet caption {
+  caption-side: top;
+  text-align: left;
+  padding: 1.1rem 1.35rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  border-bottom: 1px solid var(--line);
+}
+table.sheet th {
+  text-align: left;
+  padding: 0.95rem 1.35rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--line-strong);
+  white-space: nowrap;
+}
+table.sheet td {
+  padding: 1rem 1.35rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-soft);
+  vertical-align: middle;
+}
+table.sheet td:first-child { color: var(--text); font-weight: 500; }
+table.sheet tbody tr:last-child td { border-bottom: none; }
+table.sheet tbody tr { transition: background-color 0.35s var(--ease); }
+table.sheet tbody tr:hover { background: rgba(200, 165, 75, 0.055); }
+table.sheet .win { color: var(--gold-deep); font-weight: 600; }
+table.sheet .muted td { color: var(--text-muted); font-style: italic; }
+
+.tee-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+  vertical-align: baseline;
+  border: 1px solid rgba(26, 29, 28, 0.25);
+}
+.tee-black { background: #15191A; }
+.tee-blue  { background: #2D5BA8; }
+.tee-combo { background: linear-gradient(135deg, #2D5BA8 50%, #F7F3EA 50%); }
+.tee-white { background: #F7F3EA; }
+
+/* --------------------------------------------------------------------------
+   15. History — honour roll
+   -------------------------------------------------------------------------- */
+.scoreboard {
+  border: 1px solid var(--line-gold);
+  background: rgba(247, 243, 234, 0.03);
+  text-align: center;
+  padding: clamp(2rem, 4.5vw, 3.5rem) clamp(1.25rem, 3vw, 2.5rem);
+}
+.scoreboard-top {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 3rem);
+  flex-wrap: wrap;
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-bottom: 1px solid var(--line-dark);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+.scoreboard-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+.sb-team h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  color: var(--ivory);
+  line-height: 1.2;
+}
+.sb-score {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: clamp(3.5rem, 12vw, 6.5rem);
+  line-height: 1;
+  color: var(--gold);
+  margin: 0.6rem 0 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+.sb-note {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+}
+.sb-dash {
+  width: clamp(16px, 4vw, 34px);
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+  justify-self: center;
+}
+.scoreboard-copy {
+  max-width: 660px;
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) auto 0;
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid var(--line-dark);
+  color: var(--on-dark-soft);
+  font-size: 0.96rem;
+}
+
+.year-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
+}
+.year-card:hover { transform: translateY(-3px); box-shadow: var(--lift); }
+.year-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem clamp(1.35rem, 2.6vw, 1.9rem);
+  background: var(--charcoal);
+  color: var(--on-dark-soft);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.year-head strong { color: var(--gold); }
+.year-body { padding: clamp(1.35rem, 2.6vw, 1.9rem); }
+.year-body h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  line-height: 1.2;
+}
+.year-meta {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+.year-body > p { margin-top: 1rem; color: var(--text-soft); font-size: 0.92rem; }
+.year-facts {
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+}
+.year-facts div { display: flex; gap: 0.6rem; }
+.year-facts dt { color: var(--text-muted); flex: none; }
+.year-facts dd { color: var(--text); }
+.year-card--muted { opacity: 0.68; }
+.year-card--next { border-color: var(--gold); }
+.year-card--next .year-head { background: linear-gradient(100deg, var(--forest), var(--forest-deep)); }
+
+/* --------------------------------------------------------------------------
+   16. Schedule / timeline
+   -------------------------------------------------------------------------- */
+.timeline { border-top: 1px solid var(--line-dark); }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 3vw, 2.2rem) 0;
+  border-bottom: 1px solid var(--line-dark);
+  transition: background-color 0.5s var(--ease);
+}
+.timeline-item:hover { background: rgba(200, 165, 75, 0.04); }
+.timeline-when {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 0.35rem;
+}
+.timeline-what h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  color: var(--ivory);
+  line-height: 1.25;
+}
+.timeline-what p { margin-top: 0.6rem; color: var(--on-dark-soft); font-size: 0.92rem; }
+@media (max-width: 680px) {
+  .timeline-item { grid-template-columns: 1fr; gap: 0.7rem; }
+  .timeline-when { padding-top: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   17. Registration form — credential application
+   -------------------------------------------------------------------------- */
+.form-card {
+  max-width: 620px;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  padding: clamp(2rem, 4.5vw, 3.25rem);
+  box-shadow: var(--lift-lg);
+}
+.form-card-head { text-align: center; margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem); }
+.form-card-head h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 1.95rem);
+  margin-top: 0.6rem;
+  line-height: 1.15;
+}
+.form-card-head p { margin-top: 0.9rem; color: var(--text-soft); font-size: 0.92rem; }
+
+.field { margin-bottom: 1.4rem; }
+.field label {
+  display: block;
+  font-size: 0.61rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+.field input {
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  transition: border-color 0.4s var(--ease), background-color 0.4s var(--ease),
+              box-shadow 0.4s var(--ease);
+}
+.field input::placeholder { color: #A9AEAB; }
+.field input:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200, 165, 75, 0.14);
+}
+.form-submit {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 1.15rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--gold);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s var(--ease);
+}
+.form-submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s var(--ease-out);
+}
+.form-submit span { position: relative; z-index: 1; }
+.form-submit:hover { color: var(--ink); }
+.form-submit:hover::after { transform: scaleY(1); }
+.form-fine {
+  margin-top: 1.35rem;
+  text-align: center;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   18. Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--ink);
+  color: var(--on-dark-soft);
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0 2.5rem;
+  border-top: 1px solid var(--line-gold);
+  position: relative;
+}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--weave);
+  pointer-events: none;
+}
+.site-footer > * { position: relative; z-index: 1; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  border-bottom: 1px solid var(--line-dark);
+}
+.footer-crest {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: var(--ivory) var(--crest) center / 150% no-repeat;
+  border: 1px solid var(--line-gold);
+  margin-bottom: 1.4rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--ivory);
+}
+.footer-brand p { margin-top: 0.8rem; font-size: 0.88rem; max-width: 330px; }
+.footer-col h4 {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+.footer-col li { margin-bottom: 0.7rem; font-size: 0.88rem; }
+.footer-col a { color: var(--on-dark-soft); transition: color 0.35s var(--ease); }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--on-dark-mute);
+}
+.footer-bottom strong { color: var(--gold); font-weight: 600; }
+@media (max-width: 760px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { justify-content: center; text-align: center; }
+}
+
+/* --------------------------------------------------------------------------
+   19. Motion — slow reveals
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal].is-in { opacity: 1; transform: none; }
+
+/* Hero entrance — staged, each element a beat behind the last */
+.hero-stage > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: rise 1.25s var(--ease-out) forwards;
+}
+.hero-stage > *:nth-child(1) { animation-delay: 0.15s; }
+.hero-stage > *:nth-child(2) { animation-delay: 0.3s; }
+.hero-stage > *:nth-child(3) { animation-delay: 0.42s; }
+.hero-stage > *:nth-child(4) { animation-delay: 0.54s; }
+.hero-stage > *:nth-child(5) { animation-delay: 0.66s; }
+.hero-stage > *:nth-child(6) { animation-delay: 0.78s; }
+.hero-stage > *:nth-child(7) { animation-delay: 0.9s; }
+.hero-stage > *:nth-child(8) { animation-delay: 1.02s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  [data-reveal] { opacity: 1; transform: none; }
+  .hero-stage > * { opacity: 1; transform: none; }
+  .scroll-cue i { animation: none; opacity: 0.6; }
+}
+
+/* --------------------------------------------------------------------------
+   20. Utilities
+   -------------------------------------------------------------------------- */
+.center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: clamp(1.5rem, 3vw, 2.25rem); }
+.mt-3 { margin-top: clamp(2.25rem, 4.5vw, 3.25rem); }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   21. Print — behave like a tournament programme
+   -------------------------------------------------------------------------- */
+@media print {
+  .masthead, .scroll-cue, .nav-toggle, .countdown, .site-footer .footer-top { display: none !important; }
+  body { background: #fff; color: #000; }
+  .band, .hero, .page-head { padding: 1.25rem 0 !important; min-height: 0 !important; background: #fff !important; color: #000 !important; }
+  .hero::after, .hero-bg, .band--dark::before, .band--forest::before, .page-head::before { display: none !important; }
+  .hero h1, .page-head h1, .section-head h2 { color: #000 !important; }
+  .glance-cell dd, .sb-team h3, .timeline-what h3, .stat b, .cd-num { color: #000 !important; }
+  .glance-cell dt, .timeline-when, .eyebrow, .scoreboard-top { color: #555 !important; }
+  .card, .team-card, .year-card, .note, .table-wrap { break-inside: avoid; box-shadow: none !important; }
+  [data-reveal], .hero-stage > * { opacity: 1 !important; transform: none !important; animation: none !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.72em; color: #666; }
+}
+
 </style>
 </head>
-<body>
+<body style="--crest:url('logo.jpg')">
 
-<!-- Ticker -->
-<div class="ticker">
-  <div class="ticker-label">The Cup</div>
-  <div class="ticker-track-wrap"><div class="ticker-track">
-    <div class="ticker-item"><span class="day-tag">SEPTEMBER 2027 · PELICAN LAKE</span></div>
-    <div class="ticker-item">Top Guns 4 &mdash; Cinderella Boyz 0</div>
-    <div class="ticker-item">Five rounds · Five formats</div>
-    <div class="ticker-item">Two teams of 10</div>
-    <div class="ticker-item">The dynasty vs the challengers</div>
-    <div class="ticker-item"><span class="day-tag">SEPTEMBER 2027 · PELICAN LAKE</span></div>
-    <div class="ticker-item">Top Guns 4 &mdash; Cinderella Boyz 0</div>
-    <div class="ticker-item">Five rounds · Five formats</div>
-    <div class="ticker-item">Two teams of 10</div>
-    <div class="ticker-item">The dynasty vs the challengers</div>
-  </div></div>
-</div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Sticky header -->
-<header>
-  <div class="header-inner">
-    <div class="header-logo"><div class="cup-icon" style="text-align:center">🏆</div><h1>Pelican Lake Cup</h1></div>
-    <nav class="header-nav">
-      <a href="#teams">Teams</a>
+<!-- ======================= MASTHEAD ======================= -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-crest" aria-hidden="true"></span>
+      <span class="wordmark-text">
+        <b>Pelican Lake Cup</b>
+        <span>Est. 2020</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="#field">The Field</a>
+      <a href="#weekend">Championship Weekend</a>
+      <a href="#course">The Course</a>
       <a href="#format">Format</a>
       <a href="#history">History</a>
-      <a href="#course">Course</a>
-      <a href="#signup">Sign Up</a>
+      <a href="#headquarters">Headquarters</a>
+      <a class="nav-cta" href="#enter">Enter the Field</a>
     </nav>
   </div>
 </header>
 
-<!-- Hero -->
-<div class="hero">
-  <img class="hero-logo" src="logo.jpg" alt="Pelican Lake Cup">
-  <div class="date-label">Ryder Cup–Style Showdown</div>
-  <h2>September 2027</h2>
-  <div class="location">Pelican Lake · Breezy Point, Minnesota</div>
-  <div class="countdown" id="countdown">
-    <div class="cd-unit"><span class="cd-num" id="cd-d">—</span><span class="cd-lab">Days</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-unit"><span class="cd-num" id="cd-h">—</span><span class="cd-lab">Hrs</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-unit"><span class="cd-num" id="cd-m">—</span><span class="cd-lab">Min</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-unit"><span class="cd-num" id="cd-s">—</span><span class="cd-lab">Sec</span></div>
-  </div>
-  <div class="cd-tagline" id="cd-tagline">until the Cup returns 🏌️</div>
-  <a href="#signup" class="hero-cta">Register Your Spot</a>
-</div>
+<main id="main">
 
-<div class="container">
+<!-- ======================= HERO ======================= -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner hero-stage">
+    <div class="hero-crest" role="img" aria-label="The Pelican Lake Cup crest"></div>
+    <p class="hero-eyebrow">Breezy Point, Minnesota</p>
+    <h1>The Pelican Lake Cup</h1>
+    <p class="hero-year">2027</p>
+    <p class="hero-tagline">A tradition worth competing for.</p>
+    <p class="hero-meta">September 2027 &nbsp;·&nbsp; Two Teams of Ten &nbsp;·&nbsp; Five Formats &nbsp;·&nbsp; One Trophy</p>
 
-<!-- TEAMS -->
-<section id="teams">
-  <div class="page-label">The Showdown</div>
-  <div class="page-title">The Teams</div>
-  <div class="gold-line"></div>
-  <p class="section-sub">Two captains. Two teams of 10. Five rounds of competitive golf across multiple formats. Bragging rights on the line.</p>
-
-  <div class="vs-wrap">
-    <div class="vs-side">
-      <img src="topguns-logo.jpg" alt="The Top Guns">
-      <h3>The Top Guns</h3>
-      <p>Captain: <strong>John Lundquist</strong></p>
+    <div class="countdown" role="group" aria-label="Countdown to the 2027 Cup">
+      <div class="cd-cell"><span class="cd-num" id="cd-days">—</span><span class="cd-lab">Days</span></div>
+      <div class="cd-cell"><span class="cd-num" id="cd-hours">—</span><span class="cd-lab">Hours</span></div>
+      <div class="cd-cell"><span class="cd-num" id="cd-mins">—</span><span class="cd-lab">Minutes</span></div>
+      <div class="cd-cell"><span class="cd-num" id="cd-secs">—</span><span class="cd-lab">Seconds</span></div>
     </div>
-    <div class="vs-mid">VS</div>
-    <div class="vs-side">
-      <img src="cinderella-logo.jpg" alt="Cinderella Boyz">
-      <h3>Cinderella Boyz</h3>
-      <p>Captain: <strong>Peter Lundquist</strong></p>
+
+    <div class="btn-row btn-row--center">
+      <a class="btn btn--gold" href="#field"><span>View the Field</span></a>
+      <a class="btn btn--ghost" href="#course"><span>Explore the Course</span></a>
     </div>
   </div>
+  <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+</section>
 
-  <div class="card-grid" style="grid-template-columns:1fr;">
-    <div class="card" style="text-align:center;">
-      <div class="round-badge" style="margin:0 auto 10px;">⛳</div>
-      <h3>5 Rounds · 1 Trophy</h3>
-      <p>Scramble. Shamble. Alternate Shot. Singles Match Play. Every format tests a different part of your game. Rosters are drafted; teams and pairings are set closer to the event.</p>
+<!-- ======================= AT A GLANCE ======================= -->
+<section class="band band--tight band--dark" aria-labelledby="glance-heading">
+  <div class="wrap">
+    <h2 id="glance-heading" class="visually-hidden">The event at a glance</h2>
+    <dl class="glance" data-reveal>
+      <div class="glance-cell">
+        <dt>Format</dt>
+        <dd>Five Rounds<small>Match play across five different formats. Points aggregate to crown the champion.</small></dd>
+      </div>
+      <div class="glance-cell">
+        <dt>The Field</dt>
+        <dd>Twenty Players<small>Ten per side. Captains draft their rosters from the registered field.</small></dd>
+      </div>
+      <div class="glance-cell">
+        <dt>Venue</dt>
+        <dd>Deacon's Lodge<small>An Arnold Palmer Signature course on the shores of Pelican Lake.</small></dd>
+      </div>
+      <div class="glance-cell">
+        <dt>Defending Champion</dt>
+        <dd>The Top Guns<small>Winners in 2024 — and in every Cup contested since 2020.</small></dd>
+      </div>
+      <div class="glance-cell">
+        <dt>Key Dates</dt>
+        <dd>September 2027<small>Exact dates confirmed closer to the event, as is the draft.</small></dd>
+      </div>
+      <div class="glance-cell">
+        <dt>All-Time Series</dt>
+        <dd>Top Guns 4 — 0<small>Four Cups played, four Cups won. The Cinderella Boyz are still chasing the first.</small></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ======================= THE FIELD ======================= -->
+<section class="band band--paper" id="field">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">The Field</p>
+      <h2>Two Teams. One Trophy.</h2>
+      <div class="rule"><i></i></div>
+      <p class="lede">Two captains, two rosters, and no neutral ground. The Top Guns arrive as the only team ever to lift the Cup. The Cinderella Boyz arrive with four years of motivation.</p>
+    </div>
+
+    <div class="field-grid">
+      <article class="team-card" data-reveal>
+        <div class="team-crest"><img src="topguns-logo.jpg" alt="The Top Guns team crest"></div>
+        <h3>The Top Guns</h3>
+        <p class="team-status">Defending Champion</p>
+        <dl class="team-meta">
+          <div><dt>Captain</dt><dd>John Lundquist</dd></div>
+          <div><dt>Cups Won</dt><dd>4 — 2020, 2021, 2023, 2024</dd></div>
+          <div><dt>Roster</dt><dd>10 Players</dd></div>
+        </dl>
+      </article>
+
+      <div class="field-vs" aria-hidden="true">VS</div>
+
+      <article class="team-card" data-reveal>
+        <div class="team-crest"><img src="cinderella-logo.jpg" alt="Cinderella Boyz team crest"></div>
+        <h3>Cinderella Boyz</h3>
+        <p class="team-status">The Challengers</p>
+        <dl class="team-meta">
+          <div><dt>Captain</dt><dd>Peter Lundquist</dd></div>
+          <div><dt>Cups Won</dt><dd>0 — chasing the first</dd></div>
+          <div><dt>Roster</dt><dd>10 Players</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="card-grid cols-2 mt-3">
+      <div class="note" data-reveal>
+        <h3>The Draft</h3>
+        <p>Rosters are not published in advance. Captains draft their teams from the registered field closer to the event — live at Breezy Point Airport in 2023, pre-drafted in 2024 so the shirts arrived on time.</p>
+      </div>
+      <div class="note" data-reveal>
+        <h3>Entering the Field</h3>
+        <p>The field is limited to twenty players. Registration puts your name in front of the captains; it does not guarantee a roster spot.</p>
+        <p class="mt-1"><a class="link-gold" href="#enter">Enter the Field</a></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FORMAT -->
-<section id="format">
-  <div class="page-label">Competition</div>
-  <div class="page-title">Format</div>
-  <div class="gold-line"></div>
-  <p class="section-sub">Five rounds. Five formats. No hiding. Points are awarded match-play style and aggregate across all five rounds. The team with the most total points wins the Pelican Lake Cup.</p>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="round-badge">1</div>
-      <h3>2v2 Scramble</h3>
-      <p>Both players hit, pick the best ball, repeat. The ultimate team format — lean on your partner's strengths.</p>
-      <p class="hcp-note"><strong>Handicap:</strong> 35% of low handicap + 15% of high handicap.</p>
+<!-- ======================= CHAMPIONSHIP WEEKEND ======================= -->
+<section class="band band--forest" id="weekend">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Championship Weekend</p>
+      <h2>How the Week Unfolds</h2>
+      <div class="rule"><i></i></div>
+      <p class="lede">Every Cup has followed the same rhythm since 2020: arrive, draft, eat, and then settle it over five rounds. The shape below is drawn from past Cups — the 2027 schedule is confirmed closer to the event.</p>
     </div>
-    <div class="card">
-      <div class="round-badge">2</div>
-      <h3>2v2 Shamble — Combined Net</h3>
-      <p>Both players hit the tee shot, pick the best drive, then each plays their own ball in. Combined net score counts.</p>
-      <p class="hcp-note"><strong>Handicap:</strong> 60% of course handicap for each player.</p>
-    </div>
-    <div class="card">
-      <div class="round-badge">3</div>
-      <h3>2v2 Shamble — Best Net</h3>
-      <p>Same as Round 2 — pick the best drive, play your own ball — but only the <strong>best net score</strong> of the two partners counts each hole.</p>
-      <p class="hcp-note"><strong>Handicap:</strong> 85% of course handicap for each player.</p>
-    </div>
-    <div class="card">
-      <div class="round-badge">4</div>
-      <h3>Alternate Shot Scramble</h3>
-      <p>Partners alternate shots on each hole. Pick the best tee shot first, then trade off from there. Communication is everything.</p>
-      <p class="hcp-note"><strong>Handicap:</strong> 35% of combined team handicap.</p>
-    </div>
-    <div class="card">
-      <div class="round-badge">5</div>
-      <h3>Singles Match Play</h3>
-      <p>Head to head. Hole by hole. No partner to bail you out. This is where legends are made.</p>
-      <p class="hcp-note"><strong>Handicap:</strong> Full course handicap (strokes given based on difference).</p>
-    </div>
-  </div>
 
-  <div style="margin-top:22px;">
-    <div class="info-block">
-      <h3>Scoring</h3>
-      <p>Each round is scored match-play style. Results from all five rounds aggregate on the cumulative scoreboard. Most total points at the end wins the Cup.</p>
-    </div>
-    <div class="info-block">
-      <h3>Tiebreaker</h3>
-      <p>In the event of a tie after five rounds, the result of Round 5 (Singles Match Play) serves as the tiebreaker. If still tied — sudden death playoff, captain's pick.</p>
-    </div>
-  </div>
-</section>
-
-<!-- HISTORY -->
-<section id="history">
-  <div class="page-label">The Cup History</div>
-  <div class="page-title">The Story So Far</div>
-  <div class="gold-line"></div>
-
-  <div class="hist-hero">
-    <div class="hist-hero-top"><span>All-Time Cup Record</span><span>2020–2024</span></div>
-    <div class="hist-scoreboard">
-      <div class="hist-team">
-        <div class="hist-team-label">Top Guns</div>
-        <div class="hist-team-score">4</div>
-        <div class="hist-team-note">Four-time champions</div>
-      </div>
-      <div class="hist-vs">VS</div>
-      <div class="hist-team">
-        <div class="hist-team-label">Cinderella Boyz</div>
-        <div class="hist-team-score">0</div>
-        <div class="hist-team-note">Still chasing the breakthrough</div>
-      </div>
-    </div>
-    <p class="hist-hero-copy">The Pelican Lake Cup started in 2020 while the Lundquist cabin was still being built. Ten guys, three rounds at Deacons Lodge, a camper in the yard, and a half-finished cabin turned into a family golf tradition with captains, drafts, uniforms, side games, and plenty of score-settling.</p>
-  </div>
-
-  <div class="hist-grid">
-    <article class="hist-card">
-      <div class="hist-card-head"><span>2020</span><strong>Top Guns</strong></div>
-      <h3>The Inaugural Cup</h3>
-      <p class="hist-meta">September 10–13, 2020 · Deacons Lodge · Cabin under construction</p>
-      <p>Erik had wanted to organize a Ryder Cup-style event for years. The first version came together during the summer the new Pelican Lake cabin was being built, with players spread between the old yellow cabin, Mark Troutman's camper, and a neighbor's guest house.</p>
-      <ul>
-        <li><strong>Captains:</strong> Erik Lundquist and Tim Valen</li>
-        <li><strong>Field:</strong> 10 players</li>
-        <li><strong>Format:</strong> 15 total points, 8 to win</li>
-        <li><strong>Rounds:</strong> Two-man shamble, singles, modified alternate shot + scramble</li>
-      </ul>
-    </article>
-
-    <article class="hist-card">
-      <div class="hist-card-head"><span>2021</span><strong>Top Guns</strong></div>
-      <h3>Back at the Lake</h3>
-      <p class="hist-meta">September 9–12, 2021 · Whitefish, White Birch, Crosswoods</p>
-      <p>The new cabin was finished and the Cup had a proper home base. The field expanded, Peter joined the event, and the Cinderella Boyz cooking the opening night dinner became part of the tradition.</p>
-      <ul>
-        <li><strong>Captains:</strong> Erik Lundquist and Tim Valen</li>
-        <li><strong>Field:</strong> 12 players</li>
-        <li><strong>Saturday dinner:</strong> Norway Ridge Supper Club</li>
-        <li><strong>Result:</strong> Two years, two Top Guns victories</li>
-      </ul>
-    </article>
-
-    <article class="hist-card muted">
-      <div class="hist-card-head"><span>2022</span><strong>No Event</strong></div>
-      <h3>The Gap Year</h3>
-      <p class="hist-meta">The trophy stayed on John's shelf.</p>
-      <p>No Cup was held in 2022, leaving the Top Guns unbeaten and the Cinderella Boyz waiting another year for a shot at the trophy.</p>
-    </article>
-
-    <article class="hist-card">
-      <div class="hist-card-head"><span>2023</span><strong>Top Guns</strong></div>
-      <h3>The Brothers Take Over</h3>
-      <p class="hist-meta">September 13–17, 2023 · Deacons Lodge, Golden Eagle, Whitefish</p>
-      <p>John and Peter became captains, the field grew to 16, and the draft became an event of its own: Breezy Point Airport, Wednesday night cookout, lawn chairs, and self-scouting reports from every player.</p>
-      <ul>
-        <li><strong>Top Guns captain:</strong> John Lundquist</li>
-        <li><strong>Cinderella Boyz captain:</strong> Peter Lundquist</li>
-        <li><strong>Format:</strong> 20 total points, 10.5 to win</li>
-        <li><strong>Result:</strong> Three years, three Top Guns wins</li>
-      </ul>
-    </article>
-
-    <article class="hist-card">
-      <div class="hist-card-head"><span>2024</span><strong>Top Guns</strong></div>
-      <h3>Deacons Lodge Takeover</h3>
-      <p class="hist-meta">September 11–15, 2024 · Deacons Lodge all three rounds</p>
-      <p>The Cup stayed at Deacons for the full weekend. Teams were drafted in advance for shirt sizing, side games were added each day, and the Top Guns kept the trophy again.</p>
-      <ul>
-        <li><strong>Top Guns:</strong> John, Ray, Logan, Drew, Pete, Hunter, Jim, Scott</li>
-        <li><strong>Cinderella Boyz:</strong> Peter, Jared, Dan, Nick, CJ, Christian, Tim, Erik</li>
-        <li><strong>New players:</strong> Dan Christianson and Christian Massett</li>
-        <li><strong>Result:</strong> Four straight for the Top Guns</li>
-      </ul>
-    </article>
-
-    <article class="hist-card next">
-      <div class="hist-card-head"><span>2027</span><strong>Next Chapter</strong></div>
-      <h3>The Return</h3>
-      <p class="hist-meta">September 2027 · Pelican Lake area</p>
-      <p>The next Cup brings the same rivalry into a new chapter. The Top Guns have the dynasty. The Cinderella Boyz have the motivation. Every dynasty eventually falls — but not until somebody takes it.</p>
-    </article>
-  </div>
-
-  <table class="data-table">
-    <thead><tr><th>Year</th><th>Winner</th><th>Captains</th><th>Field</th><th>Courses</th></tr></thead>
-    <tbody>
-      <tr><td>2020</td><td>Top Guns</td><td>Erik Lundquist / Tim Valen</td><td>10</td><td>Deacons Lodge</td></tr>
-      <tr><td>2021</td><td>Top Guns</td><td>Erik Lundquist / Tim Valen</td><td>12</td><td>Whitefish, White Birch, Crosswoods</td></tr>
-      <tr><td>2022</td><td>No event</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td>2023</td><td>Top Guns</td><td>John Lundquist / Peter Lundquist</td><td>16</td><td>Deacons, Golden Eagle, Whitefish</td></tr>
-      <tr><td>2024</td><td>Top Guns</td><td>John Lundquist / Peter Lundquist</td><td>16</td><td>Deacons Lodge</td></tr>
-    </tbody>
-  </table>
-
-  <div class="split" style="margin-top:22px;">
-    <div class="info-block">
-      <h3>Cup Traditions</h3>
-      <ul>
-        <li>The draft: live at Breezy Point Airport in 2023, then pre-drafted in 2024 for shirts.</li>
-        <li>Cinderella Boyz cook the opening night dinner.</li>
-        <li>The cabin at 10955 Hamilton Lane is Cup headquarters.</li>
-        <li>The format keeps rotating: shamble, singles, alternate shot, scramble.</li>
-      </ul>
-    </div>
-    <div class="info-block">
-      <h3>Players Through the Years</h3>
-      <p>The roster has included Erik, John, Peter, Tim Valen, Scott Moon, Mark Troutman, Ray Dunfee, Jim Urlick, Pete Overgaard, Nick Ozolins, Mark Goettig, Ken Ericson, Andrew Valen, Hunter Johnson, Drew Fredrickson, Jared Campbell, CJ Woda, Logan Rezac, Jim Ehrlich, Dan Christianson, and Christian Massett.</p>
+    <div class="timeline">
+      <article class="timeline-item" data-reveal>
+        <p class="timeline-when">Arrival</p>
+        <div class="timeline-what">
+          <h3>The Field Assembles</h3>
+          <p>Players make their way north to the Brainerd Lakes. The cabin becomes tournament headquarters for the week — it has been the base of the Cup since the event outgrew a half-finished build and a camper in the yard.</p>
+        </div>
+      </article>
+      <article class="timeline-item" data-reveal>
+        <p class="timeline-when">Draft Night</p>
+        <div class="timeline-what">
+          <h3>Captains Select</h3>
+          <p>Two captains, twenty names, and a self-scouting report from every player. In 2023 the draft was held outdoors at Breezy Point Airport with a cookout and lawn chairs. In 2024 it moved earlier so team shirts could be sized and ordered.</p>
+        </div>
+      </article>
+      <article class="timeline-item" data-reveal>
+        <p class="timeline-when">Opening Night</p>
+        <div class="timeline-what">
+          <h3>The Cinderella Boyz Cook</h3>
+          <p>A tradition since 2021: the challengers handle the opening night dinner. Hospitality first, hostilities second.</p>
+        </div>
+      </article>
+      <article class="timeline-item" data-reveal>
+        <p class="timeline-when">Competition</p>
+        <div class="timeline-what">
+          <h3>Five Rounds, Five Formats</h3>
+          <p>Scramble, two shambles, alternate shot, and singles match play. Each round is scored match-play style and every point carries to the cumulative scoreboard.</p>
+        </div>
+      </article>
+      <article class="timeline-item" data-reveal>
+        <p class="timeline-when">Evening</p>
+        <div class="timeline-what">
+          <h3>Off the Course</h3>
+          <p>Lake time, a supper club dinner — Norway Ridge in 2021 — side games, and the running argument about who actually carried whom.</p>
+        </div>
+      </article>
+      <article class="timeline-item" data-reveal>
+        <p class="timeline-when">Sunday</p>
+        <div class="timeline-what">
+          <h3>The Cup Is Presented</h3>
+          <p>Singles match play closes the week, the final points are counted, and the trophy goes home with somebody. For four straight Cups, that somebody has been the Top Guns.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- COURSE -->
-<section id="course">
-  <div class="page-label">Know the Battlefield</div>
-  <div class="page-title">Course Information</div>
-  <div class="gold-line"></div>
-  <p class="section-sub">Four tee boxes available. Tee assignments will be based on handicap and format requirements.</p>
-
-  <table class="data-table">
-    <thead><tr><th>Tees</th><th>Slope</th><th>Rating</th><th>Yardage</th></tr></thead>
-    <tbody>
-      <tr><td><span class="tee-dot tee-black"></span> Black</td><td>144</td><td>74.1</td><td>6,964</td></tr>
-      <tr><td><span class="tee-dot tee-blue"></span> Blue</td><td>142</td><td>72.3</td><td>6,541</td></tr>
-      <tr><td><span class="tee-dot tee-combo"></span> Combo</td><td>133</td><td>71.6</td><td>6,418</td></tr>
-      <tr><td><span class="tee-dot tee-white"></span> White</td><td>130</td><td>70.0</td><td>6,067</td></tr>
-    </tbody>
-  </table>
-
-  <div style="margin-top:22px;">
-    <div class="info-block">
-      <h3>📍 Location</h3>
-      <p>Pelican Lake area, Breezy Point, Minnesota. Full course name and address to be confirmed.</p>
-    </div>
-    <div class="info-block">
-      <h3>🏌️ Handicap Calculation</h3>
-      <p>All handicap adjustments are calculated using the <strong>course slope and rating</strong> from the tees played. Each format uses a different percentage of course handicap — see the Format section above for specifics.</p>
-    </div>
-    <div class="info-block">
-      <h3>⚡ Course Conditions</h3>
-      <p>Details on cart rules, dress code, practice facilities, and pace-of-play expectations will be shared closer to the event.</p>
+<!-- ======================= THE COURSE ======================= -->
+<section class="band band--ivory" id="course">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div class="editorial" data-reveal>
+        <p class="eyebrow">The Battlefield</p>
+        <h2>Deacon's Lodge</h2>
+        <div class="rule rule--left"><i></i></div>
+        <p class="lede">An Arnold Palmer Signature design laid across 150 acres of Minnesota's Brainerd Lakes country. Mixed forest, wetland, and the shoreline of Pelican Lake make it one of the most beautiful — and least forgiving — layouts in the state. It has hosted more Cup golf than any other course.</p>
+        <dl class="spec-list">
+          <div><dt>Design</dt><dd>Arnold Palmer Signature</dd></div>
+          <div><dt>Opened</dt><dd>1999</dd></div>
+          <div><dt>Par</dt><dd>72</dd></div>
+          <div><dt>Greens</dt><dd>Penncross bentgrass</dd></div>
+          <div><dt>Facility</dt><dd>Spikeless</dd></div>
+          <div><dt>Address</dt><dd>9252 Breezy Point Drive, Breezy Point, MN</dd></div>
+        </dl>
+        <div class="btn-row">
+          <a class="btn btn--outline" href="course.html"><span>Explore the Course</span></a>
+        </div>
+      </div>
+      <div class="plate" data-reveal>
+        <img src="PLC-Logo-Transparent.png" alt="The Pelican Lake Cup mark">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SIGN UP -->
-<section id="signup">
-  <div class="page-label">Claim Your Spot</div>
-  <div class="page-title">Sign Up</div>
-  <div class="gold-line"></div>
-  <p class="section-sub">Spots are limited to 20 players. Fill out the form below to register for the Pelican Lake Cup.</p>
+<section class="band band--tight band--dark">
+  <div class="wrap">
+    <div class="stats" data-reveal>
+      <div class="stat"><b data-count="72">72</b><span>Par</span></div>
+      <div class="stat"><b data-count="18">18</b><span>Holes</span></div>
+      <div class="stat"><b data-count="150">150</b><span>Acres</span></div>
+      <div class="stat"><b>1999</b><span>Opened</span></div>
+    </div>
 
-  <div class="form-container">
-    <form action="https://formsubmit.co/peterlundquist33@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New Pelican Lake Cup Registration!">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" style="display:none">
-
-      <div class="form-group">
-        <label for="player-name">Full Name *</label>
-        <input type="text" id="player-name" name="Name" placeholder="e.g. Tiger Woods" required>
-      </div>
-      <div class="form-group">
-        <label for="player-email">Email *</label>
-        <input type="email" id="player-email" name="Email" placeholder="you@example.com" required>
-      </div>
-      <div class="form-group">
-        <label for="player-handicap">Handicap Index</label>
-        <input type="text" id="player-handicap" name="Handicap" placeholder="e.g. 12.4 (leave blank if unknown)">
-      </div>
-      <button type="submit" class="form-submit">Register</button>
-      <p class="form-note">You'll receive confirmation details via email.</p>
-    </form>
+    <div class="table-wrap mt-3" data-reveal>
+      <table class="sheet">
+        <caption>Tee Options — Course Rating &amp; Slope</caption>
+        <thead>
+          <tr><th scope="col">Tees</th><th scope="col">Slope</th><th scope="col">Rating</th><th scope="col">Yardage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tee-dot tee-black"></span>Black</td><td>144</td><td>74.1</td><td>6,964</td></tr>
+          <tr><td><span class="tee-dot tee-blue"></span>Blue</td><td>142</td><td>72.3</td><td>6,541</td></tr>
+          <tr><td><span class="tee-dot tee-combo"></span>Combo</td><td>133</td><td>71.6</td><td>6,418</td></tr>
+          <tr><td><span class="tee-dot tee-white"></span>White</td><td>130</td><td>70.0</td><td>6,067</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="center mt-2" style="font-size:.8rem;letter-spacing:.06em;color:rgba(247,243,234,.42)">
+      Tee assignments are based on handicap index and format. Course handicap = Index × (Slope ÷ 113) + (Course Rating − Par).
+    </p>
   </div>
 </section>
 
-</div>
+<!-- ======================= FORMAT ======================= -->
+<section class="band band--paper" id="format">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Competition</p>
+      <h2>Five Rounds. Five Ways to Win.</h2>
+      <div class="rule"><i></i></div>
+      <p class="lede">Every format tests something different — teamwork, strategy, nerve, and individual grit. Points are awarded match-play style and aggregate across all five rounds. The team with the most total points wins the Cup.</p>
+    </div>
 
-<footer class="footer">
-  <p><strong>Pelican Lake Cup</strong> &copy; 2027 &mdash; Let the best team win.</p>
+    <div class="card-grid cols-3">
+      <article class="card round-card" data-reveal>
+        <span class="round-no">1</span>
+        <h3>2v2 Scramble</h3>
+        <p>Both players hit, pick the best ball, repeat. The ultimate team format — lean on your partner's strengths.</p>
+        <dl class="allowance"><dt>Handicap</dt><dd>35% low + 15% high</dd></dl>
+      </article>
+      <article class="card round-card" data-reveal>
+        <span class="round-no">2</span>
+        <h3>2v2 Shamble — Combined Net</h3>
+        <p>Both players hit the tee shot, pick the best drive, then each plays their own ball in. Combined net score counts.</p>
+        <dl class="allowance"><dt>Handicap</dt><dd>60% of course handicap</dd></dl>
+      </article>
+      <article class="card round-card" data-reveal>
+        <span class="round-no">3</span>
+        <h3>2v2 Shamble — Best Net</h3>
+        <p>Same as Round 2 — pick the best drive, play your own ball — but only the best net score of the two partners counts each hole.</p>
+        <dl class="allowance"><dt>Handicap</dt><dd>85% of course handicap</dd></dl>
+      </article>
+      <article class="card round-card" data-reveal>
+        <span class="round-no">4</span>
+        <h3>Alternate Shot Scramble</h3>
+        <p>Partners alternate shots on each hole. Pick the best tee shot first, then trade off from there. Communication is everything.</p>
+        <dl class="allowance"><dt>Handicap</dt><dd>35% of combined team handicap</dd></dl>
+      </article>
+      <article class="card round-card" data-reveal>
+        <span class="round-no">5</span>
+        <h3>Singles Match Play</h3>
+        <p>Head to head. Hole by hole. No partner to bail you out. This is where legends are made.</p>
+        <dl class="allowance"><dt>Handicap</dt><dd>Full course handicap</dd></dl>
+      </article>
+      <article class="card card--dark round-card" data-reveal>
+        <span class="round-no">—</span>
+        <h3>Scoring &amp; Tiebreaker</h3>
+        <p>Each round is scored match-play style and results aggregate on the cumulative scoreboard. If the Cup is tied after five rounds, Round 5 serves as the tiebreaker. Still tied — sudden death playoff, captain's pick.</p>
+        <dl class="allowance" style="border-color:rgba(247,243,234,.13)"><dt style="color:rgba(247,243,234,.42)">Full detail</dt><dd><a class="link-gold" href="format.html">Format</a></dd></dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= HISTORY ======================= -->
+<section class="band band--dark" id="history">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Championship History</p>
+      <h2>The Story So Far</h2>
+      <div class="rule"><i></i></div>
+    </div>
+
+    <div class="scoreboard" data-reveal>
+      <div class="scoreboard-top">
+        <span>All-Time Cup Record</span>
+        <span>2020 — 2024</span>
+      </div>
+      <div class="scoreboard-grid">
+        <div class="sb-team">
+          <h3>The Top Guns</h3>
+          <b class="sb-score" data-count="4">4</b>
+          <p class="sb-note">Four-Time Champion</p>
+        </div>
+        <div class="sb-dash" aria-hidden="true"></div>
+        <div class="sb-team">
+          <h3>Cinderella Boyz</h3>
+          <b class="sb-score" data-count="0">0</b>
+          <p class="sb-note">Still Chasing the Breakthrough</p>
+        </div>
+      </div>
+      <p class="scoreboard-copy">The Pelican Lake Cup started in 2020 while the Lundquist cabin was still being built. Ten guys, three rounds at Deacons Lodge, a camper in the yard, and a half-finished cabin turned into a family golf tradition with captains, drafts, uniforms, side games, and plenty of score-settling.</p>
+    </div>
+
+    <div class="card-grid cols-3 mt-3">
+      <article class="year-card" data-reveal>
+        <div class="year-head"><span>2020</span><strong>Top Guns</strong></div>
+        <div class="year-body">
+          <h3>The Inaugural Cup</h3>
+          <p class="year-meta">Sept 10–13 · Deacons Lodge</p>
+          <p>Erik had wanted to organize a Ryder Cup-style event for years. The first version came together during the summer the new Pelican Lake cabin was being built, with players spread between the old yellow cabin, Mark Troutman's camper, and a neighbor's guest house.</p>
+          <dl class="year-facts">
+            <div><dt>Captains</dt><dd>Erik Lundquist &amp; Tim Valen</dd></div>
+            <div><dt>Field</dt><dd>10 players</dd></div>
+            <div><dt>Points</dt><dd>15 total, 8 to win</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="year-card" data-reveal>
+        <div class="year-head"><span>2021</span><strong>Top Guns</strong></div>
+        <div class="year-body">
+          <h3>Back at the Lake</h3>
+          <p class="year-meta">Sept 9–12 · Whitefish, White Birch, Crosswoods</p>
+          <p>The new cabin was finished and the Cup had a proper home base. The field expanded, Peter joined the event, and the Cinderella Boyz cooking the opening night dinner became part of the tradition.</p>
+          <dl class="year-facts">
+            <div><dt>Captains</dt><dd>Erik Lundquist &amp; Tim Valen</dd></div>
+            <div><dt>Field</dt><dd>12 players</dd></div>
+            <div><dt>Dinner</dt><dd>Norway Ridge Supper Club</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="year-card year-card--muted" data-reveal>
+        <div class="year-head"><span>2022</span><strong>No Event</strong></div>
+        <div class="year-body">
+          <h3>The Gap Year</h3>
+          <p class="year-meta">The trophy stayed on John's shelf</p>
+          <p>No Cup was held in 2022, leaving the Top Guns unbeaten and the Cinderella Boyz waiting another year for a shot at the trophy.</p>
+        </div>
+      </article>
+
+      <article class="year-card" data-reveal>
+        <div class="year-head"><span>2023</span><strong>Top Guns</strong></div>
+        <div class="year-body">
+          <h3>The Brothers Take Over</h3>
+          <p class="year-meta">Sept 13–17 · Deacons, Golden Eagle, Whitefish</p>
+          <p>John and Peter became captains, the field grew to 16, and the draft became an event of its own: Breezy Point Airport, Wednesday night cookout, lawn chairs, and self-scouting reports from every player.</p>
+          <dl class="year-facts">
+            <div><dt>Captains</dt><dd>John &amp; Peter Lundquist</dd></div>
+            <div><dt>Field</dt><dd>16 players</dd></div>
+            <div><dt>Points</dt><dd>20 total, 10.5 to win</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="year-card" data-reveal>
+        <div class="year-head"><span>2024</span><strong>Top Guns</strong></div>
+        <div class="year-body">
+          <h3>Deacons Lodge Takeover</h3>
+          <p class="year-meta">Sept 11–15 · Deacons Lodge, all rounds</p>
+          <p>The Cup stayed at Deacons for the full weekend. Teams were drafted in advance for shirt sizing, side games were added each day, and the Top Guns kept the trophy again.</p>
+          <dl class="year-facts">
+            <div><dt>Field</dt><dd>16 players</dd></div>
+            <div><dt>New</dt><dd>Dan Christianson, Christian Massett</dd></div>
+            <div><dt>Result</dt><dd>Four straight for the Top Guns</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="year-card year-card--next" data-reveal>
+        <div class="year-head"><span>2027</span><strong>Next Chapter</strong></div>
+        <div class="year-body">
+          <h3>The Return</h3>
+          <p class="year-meta">September 2027 · Pelican Lake</p>
+          <p>The next Cup brings the same rivalry into a new chapter. The Top Guns have the dynasty. The Cinderella Boyz have the motivation. Every dynasty eventually falls — but not until somebody takes it.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="btn-row btn-row--center mt-3" data-reveal>
+      <a class="btn btn--ghost" href="history.html"><span>Championship History</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= HEADQUARTERS ======================= -->
+<section class="band band--ivory" id="headquarters">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Tournament Headquarters</p>
+      <h2>Everything Runs Through the Lake</h2>
+      <div class="rule"><i></i></div>
+      <p class="lede">The cabin is the operations room for the week — draft board, pairings, side games, and the scoreboard that settles the arguments.</p>
+    </div>
+
+    <div class="card-grid cols-3">
+      <article class="card" data-reveal>
+        <h3>Cup Traditions</h3>
+        <p>The draft, held live at Breezy Point Airport in 2023 and pre-drafted in 2024 for shirts. The Cinderella Boyz cooking opening night. A format that keeps rotating — shamble, singles, alternate shot, scramble.</p>
+      </article>
+      <article class="card" data-reveal>
+        <h3>Event Updates</h3>
+        <p>No bulletins have been posted yet. Draft date, pairings, tee times, and the final course rotation will be published here as they are confirmed.</p>
+      </article>
+      <article class="card" data-reveal>
+        <h3>Players Through the Years</h3>
+        <p>Erik, John, Peter, Tim Valen, Scott Moon, Mark Troutman, Ray Dunfee, Jim Urlick, Pete Overgaard, Nick Ozolins, Mark Goettig, Ken Ericson, Andrew Valen, Hunter Johnson, Drew Fredrickson, Jared Campbell, CJ Woda, Logan Rezac, Jim Ehrlich, Dan Christianson, and Christian Massett.</p>
+      </article>
+    </div>
+
+    <div class="table-wrap mt-3" data-reveal>
+      <table class="sheet">
+        <caption>Honour Roll</caption>
+        <thead>
+          <tr><th scope="col">Year</th><th scope="col">Winner</th><th scope="col">Captains</th><th scope="col">Field</th><th scope="col">Courses</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2020</td><td class="win">Top Guns</td><td>Erik Lundquist / Tim Valen</td><td>10</td><td>Deacons Lodge</td></tr>
+          <tr><td>2021</td><td class="win">Top Guns</td><td>Erik Lundquist / Tim Valen</td><td>12</td><td>Whitefish, White Birch, Crosswoods</td></tr>
+          <tr class="muted"><td>2022</td><td>No event</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>2023</td><td class="win">Top Guns</td><td>John Lundquist / Peter Lundquist</td><td>16</td><td>Deacons, Golden Eagle, Whitefish</td></tr>
+          <tr><td>2024</td><td class="win">Top Guns</td><td>John Lundquist / Peter Lundquist</td><td>16</td><td>Deacons Lodge</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ENTER THE FIELD ======================= -->
+<section class="band band--forest" id="enter">
+  <div class="wrap">
+    <div class="form-card" data-reveal>
+      <div class="form-card-head">
+        <p class="eyebrow">Registration</p>
+        <h3>Enter the Field</h3>
+        <p>The field is limited to twenty players. Put your name in front of the captains for the 2027 Cup.</p>
+      </div>
+
+      <form action="https://formsubmit.co/peterlundquist33@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Pelican Lake Cup Registration!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="field">
+          <label for="player-name">Full Name *</label>
+          <input type="text" id="player-name" name="Name" placeholder="First and last" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="player-email">Email *</label>
+          <input type="email" id="player-email" name="Email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="player-handicap">Handicap Index</label>
+          <input type="text" id="player-handicap" name="Handicap" placeholder="e.g. 12.4 — leave blank if unknown">
+        </div>
+
+        <button type="submit" class="form-submit"><span>Submit Registration</span></button>
+        <p class="form-fine">Registration does not guarantee a roster spot — captains draft from the field. You'll receive confirmation details by email.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-crest" aria-hidden="true"></div>
+        <h3>The Pelican Lake Cup</h3>
+        <p>A Ryder Cup-style showdown between family and friends. Two teams. Five formats. One trophy. Bragging rights forever.</p>
+      </div>
+      <div class="footer-col">
+        <h4>The Tournament</h4>
+        <ul>
+          <li><a href="#field">The Field</a></li>
+          <li><a href="#weekend">Championship Weekend</a></li>
+          <li><a href="format.html">Format</a></li>
+          <li><a href="history.html">Championship History</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Venue</h4>
+        <ul>
+          <li><a href="course.html">Deacon's Lodge</a></li>
+          <li>9252 Breezy Point Drive</li>
+          <li>Breezy Point, Minnesota</li>
+          <li><a href="signup.html">Enter the Field</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><strong>Pelican Lake Cup</strong> &nbsp;·&nbsp; Established 2020 &nbsp;·&nbsp; A Lundquist Family Production</p>
+      <p>Let the best team win.</p>
+    </div>
+  </div>
 </footer>
 
 <script>
-(function(){
-  // Countdown to September 1, 2027, 8:00 AM Central (CDT = UTC-5) => 13:00 UTC
-  var TARGET=new Date('2027-09-01T13:00:00Z').getTime();
-  function two(n){return (n<10?'0':'')+n;}
-  function tick(){
-    var d=document.getElementById('cd-d'); if(!d) return;
-    var diff=TARGET-Date.now();
-    var tag=document.getElementById('cd-tagline');
-    if(diff<=0){
-      d.textContent='0';
-      document.getElementById('cd-h').textContent='00';
-      document.getElementById('cd-m').textContent='00';
-      document.getElementById('cd-s').textContent='00';
-      if(tag) tag.textContent="it's go time 🏌️";
-      return;
+/* ==========================================================================
+   THE PELICAN LAKE CUP — Behaviour
+   Vanilla JS. No dependencies, no build step.
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var reduced = typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ------------------------------------------------------------------
+     Countdown — September 1, 2027, 8:00 AM Central (CDT, UTC-5)
+     Kept from the original site; the event is real and still ahead.
+     ------------------------------------------------------------------ */
+  var TARGET = Date.parse('2027-09-01T13:00:00Z');
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  function tick() {
+    var days = document.getElementById('cd-days');
+    if (!days) return;
+
+    var hrs  = document.getElementById('cd-hours');
+    var mins = document.getElementById('cd-mins');
+    var secs = document.getElementById('cd-secs');
+    var note = document.getElementById('cd-note');
+    var diff = TARGET - Date.now();
+
+    if (diff <= 0) {
+      days.textContent = '0';
+      if (hrs)  hrs.textContent  = '00';
+      if (mins) mins.textContent = '00';
+      if (secs) secs.textContent = '00';
+      if (note) note.textContent = 'Championship Weekend is here';
+      return true;
     }
-    var s=Math.floor(diff/1000);
-    var days=Math.floor(s/86400); s-=days*86400;
-    var hrs=Math.floor(s/3600); s-=hrs*3600;
-    var mins=Math.floor(s/60); s-=mins*60;
-    d.textContent=days;
-    document.getElementById('cd-h').textContent=two(hrs);
-    document.getElementById('cd-m').textContent=two(mins);
-    document.getElementById('cd-s').textContent=two(s);
+
+    var s = Math.floor(diff / 1000);
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600);  s -= h * 3600;
+    var m = Math.floor(s / 60);    s -= m * 60;
+
+    days.textContent = d;
+    if (hrs)  hrs.textContent  = pad(h);
+    if (mins) mins.textContent = pad(m);
+    if (secs) secs.textContent = pad(s);
+    return false;
   }
-  tick();
-  setInterval(tick,1000);
+
+  if (document.getElementById('cd-days')) {
+    if (!tick()) {
+      var timer = setInterval(function () {
+        if (tick()) clearInterval(timer);
+      }, 1000);
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     Masthead — transparent over the hero, solid once you leave it
+     ------------------------------------------------------------------ */
+  var masthead = document.querySelector('.masthead');
+
+  if (masthead && !masthead.classList.contains('is-static')) {
+    var solidAt = 60;
+    var queuedNav = false;
+
+    var syncNav = function () {
+      masthead.classList.toggle('is-solid', window.scrollY > solidAt);
+      queuedNav = false;
+    };
+
+    window.addEventListener('scroll', function () {
+      if (queuedNav) return;
+      queuedNav = true;
+      window.requestAnimationFrame(syncNav);
+    }, { passive: true });
+
+    syncNav();
+  }
+
+  /* ------------------------------------------------------------------
+     Mobile navigation
+     ------------------------------------------------------------------ */
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.nav');
+
+  if (toggle && nav) {
+    var setNav = function (open) {
+      nav.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    toggle.addEventListener('click', function () {
+      setNav(!nav.classList.contains('is-open'));
+    });
+
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setNav(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        setNav(false);
+        toggle.focus();
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     Active nav link
+     ------------------------------------------------------------------ */
+  var here = window.location.pathname.split('/').pop() || 'index.html';
+  Array.prototype.forEach.call(document.querySelectorAll('.nav a'), function (a) {
+    var href = (a.getAttribute('href') || '').split('#')[0];
+    if (href && href === here) a.classList.add('is-active');
+  });
+
+  /* ------------------------------------------------------------------
+     Slow reveals on scroll
+     ------------------------------------------------------------------ */
+  var revealables = document.querySelectorAll('[data-reveal]');
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(revealables, function (el) { el.classList.add('is-in'); });
+  } else {
+    var revealer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        revealer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+    Array.prototype.forEach.call(revealables, function (el, i) {
+      // Stagger siblings so a row of cards arrives in sequence, not as a block.
+      var group = el.parentElement;
+      var peers = group ? group.querySelectorAll(':scope > [data-reveal]') : null;
+      var index = peers ? Array.prototype.indexOf.call(peers, el) : i;
+      if (index > 0) el.style.setProperty('--reveal-delay', Math.min(index, 5) * 90 + 'ms');
+      revealer.observe(el);
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     Figures that count up when they come into view
+     ------------------------------------------------------------------ */
+  function animateFigure(el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    if (isNaN(target)) return;
+
+    var decimals = (el.getAttribute('data-decimals') | 0);
+    var prefix = el.getAttribute('data-prefix') || '';
+    var suffix = el.getAttribute('data-suffix') || '';
+
+    var render = function (value) {
+      var n = decimals ? value.toFixed(decimals) : Math.round(value).toLocaleString('en-US');
+      el.textContent = prefix + n + suffix;
+    };
+
+    if (reduced) { render(target); return; }
+
+    var duration = 1400;
+    var start = null;
+
+    var step = function (now) {
+      if (start === null) start = now;
+      var p = Math.min((now - start) / duration, 1);
+      // easeOutExpo — fast, then a long settle
+      var eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+      render(target * eased);
+      if (p < 1) window.requestAnimationFrame(step);
+    };
+
+    window.requestAnimationFrame(step);
+  }
+
+  var figures = document.querySelectorAll('[data-count]');
+
+  if (!('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(figures, animateFigure);
+  } else {
+    var counter = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        animateFigure(entry.target);
+        counter.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    Array.prototype.forEach.call(figures, function (el) { counter.observe(el); });
+  }
+
+  /* ------------------------------------------------------------------
+     Hero parallax — a few pixels of drift, nothing more
+     ------------------------------------------------------------------ */
+  var heroBg = document.querySelector('.hero-bg');
+
+  if (heroBg && !reduced) {
+    var queuedHero = false;
+
+    var syncHero = function () {
+      var y = window.scrollY;
+      if (y < window.innerHeight * 1.2) {
+        heroBg.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(2) + 'px,0)';
+      }
+      queuedHero = false;
+    };
+
+    window.addEventListener('scroll', function () {
+      if (queuedHero) return;
+      queuedHero = true;
+      window.requestAnimationFrame(syncHero);
+    }, { passive: true });
+  }
 })();
+
 </script>
 </body>
 </html>
