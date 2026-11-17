@@ -788,21 +788,16 @@ button { font: inherit; }
 }
 .team-card:hover { transform: translateY(-4px); box-shadow: var(--lift-lg); }
 .team-crest {
-  width: clamp(130px, 22vw, 190px);
-  height: clamp(130px, 22vw, 190px);
+  width: clamp(150px, 26vw, 220px);
+  height: clamp(150px, 26vw, 220px);
   margin: 0 auto clamp(1.3rem, 2.6vw, 1.8rem);
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid var(--line-gold);
-  box-shadow: 0 0 0 6px rgba(200, 165, 75, 0.08);
   display: grid;
   place-items: center;
-  background: var(--charcoal);
 }
 .team-crest img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 1.2s var(--ease-out);
 }
 .team-card:hover .team-crest img { transform: scale(1.06); }
@@ -1617,7 +1612,7 @@ table.sheet .muted td { color: var(--text-muted); font-style: italic; }
 
     <div class="field-grid">
       <article class="team-card" data-reveal>
-        <div class="team-crest"><img src="topguns-logo.jpg" alt="The Top Guns team crest"></div>
+        <div class="team-crest"><img src="topguns-crest.png" alt="The Top Guns team crest"></div>
         <h3>The Top Guns</h3>
         <p class="team-status">Defending Champion</p>
         <dl class="team-meta">
@@ -1630,7 +1625,7 @@ table.sheet .muted td { color: var(--text-muted); font-style: italic; }
       <div class="field-vs" aria-hidden="true">VS</div>
 
       <article class="team-card" data-reveal>
-        <div class="team-crest"><img src="cinderella-logo.jpg" alt="Cinderella Boyz team crest"></div>
+        <div class="team-crest"><img src="cinderella-crest.png" alt="Cinderella Boyz team crest"></div>
         <h3>Cinderella Boyz</h3>
         <p class="team-status">The Challengers</p>
         <dl class="team-meta">
